@@ -1,0 +1,68 @@
+import type { Category } from '../types';
+
+export const categories: Category[] = [
+  {
+    id: 'cat-1',
+    name: 'Sewing Machines',
+    slug: 'sewing-machines',
+    description: 'Home and semi-professional sewing machines for all skill levels',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80',
+    productCount: 24,
+  },
+  {
+    id: 'cat-2',
+    name: 'Industrial Machines',
+    slug: 'industrial-machines',
+    description: 'Heavy-duty industrial sewing machines for production use',
+    image: 'https://images.unsplash.com/photo-1581093806997-124204d9fa9d?w=400&q=80',
+    productCount: 16,
+  },
+  {
+    id: 'cat-3',
+    name: 'Embroidery Machines',
+    slug: 'embroidery-machines',
+    description: 'Professional embroidery machines for intricate designs',
+    image: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=400&q=80',
+    productCount: 12,
+  },
+  {
+    id: 'cat-4',
+    name: 'Cutting Equipment',
+    slug: 'cutting-equipment',
+    description: 'Fabric cutters, rotary cutters and cutting mats',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
+    productCount: 18,
+  },
+  {
+    id: 'cat-5',
+    name: 'Needles & Accessories',
+    slug: 'needles-accessories',
+    description: 'Needles, threads, presser feet and all accessories',
+    image: 'https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?w=400&q=80',
+    productCount: 45,
+  },
+  {
+    id: 'cat-6',
+    name: 'Starter Kits',
+    slug: 'starter-kits',
+    description: 'Complete kits for beginners and fashion school students',
+    image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?w=400&q=80',
+    productCount: 8,
+  },
+  {
+    id: 'cat-7',
+    name: 'Spare Parts',
+    slug: 'spare-parts',
+    description: 'Genuine replacement parts for all major brands',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80',
+    productCount: 60,
+  },
+  {
+    id: 'cat-8',
+    name: 'Training Materials',
+    slug: 'training-materials',
+    description: 'Books, DVDs and guides for tailoring and fashion design',
+    image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&q=80',
+    productCount: 20,
+  },
+];

@@ -7,3 +7,15 @@ dist-ssr/
 .env.*.local
 .DS_Store
 Thumbs.db
+
+# Local Netlify folder
+.netlify
+
+# Backend
+backend/node_modules/
+backend/dist/
+backend/.env
+backend/server.log
+
+# Build artifacts
+dist.zip

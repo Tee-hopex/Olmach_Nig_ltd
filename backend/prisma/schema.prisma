@@ -1,0 +1,134 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Product {
+  id               String   @id @default(cuid())
+  name             String
+  slug             String   @unique
+  brand            String
+  categoryId       String
+  category         Category @relation(fields: [categoryId], references: [id])
+  subcategory      String?
+  price            Float
+  salePrice        Float?
+  images           String[]
+  rating           Float    @default(0)
+  reviewCount      Int      @default(0)
+  description      String
+  shortDescription String
+  features         String[]
+  specifications   Json     @default("{}")
+  inStock          Boolean  @default(true)
+  stockCount       Int      @default(0)
+  isFeatured       Boolean  @default(false)
+  isBestSeller     Boolean  @default(false)
+  isNew            Boolean  @default(false)
+  badge            String?
+  warranty         String?
+  tags             String[]
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@index([slug])
+  @@index([categoryId])
+  @@index([isFeatured])
+  @@index([isBestSeller])
+  @@index([isNew])
+  @@index([inStock])
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?
+  image       String?
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Brand {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  logo        String?
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Order {
+  id            String   @id @default(cuid())
+  orderNumber   String   @unique
+  customerName  String
+  customerEmail String
+  customerPhone String
+  address       String
+  city          String
+  state         String
+  items         Json
+  subtotal      Float
+  deliveryFee   Float    @default(0)
+  total         Float
+  paymentMethod String   @default("bank_transfer")
+  paymentProof  String?
+  status        String   @default("pending")
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([orderNumber])
+  @@index([customerEmail])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model AdminUser {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SiteSettings {
+  id                    String  @id @default(cuid())
+  bankName              String?
+  bankAccountName       String?
+  bankAccountNumber     String?
+  whatsappNumber        String?
+  deliveryFee           Float   @default(1500)
+  freeDeliveryThreshold Float   @default(50000)
+}
+
+model BlogPost {
+  id        String   @id @default(cuid())
+  title     String
+  slug      String   @unique
+  excerpt   String
+  content   String
+  image     String?
+  category  String?
+  author    String
+  published Boolean  @default(false)
+  tags      String[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([slug])
+  @@index([published])
+}
+
+model Subscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}

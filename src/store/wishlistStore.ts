@@ -43,6 +43,6 @@ export const useWishlistStore = create<WishlistState>()(
 
       clearWishlist: () => set({ items: [] }),
     }),
-    { name: 'stitchpro-wishlist' }
+    { name: 'Olmach Nig Ltd-wishlist' }
   )
 );

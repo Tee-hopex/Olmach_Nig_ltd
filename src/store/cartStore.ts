@@ -23,18 +23,22 @@ export const useCartStore = create<CartState>()(
       isOpen: false,
 
       addItem: (product, quantity = 1) => {
+        if (!product.inStock || product.stockCount === 0) return;
         set(state => {
           const existing = state.items.find(i => i.product.id === product.id);
+          const currentQty = existing?.quantity ?? 0;
+          const canAdd = Math.min(quantity, product.stockCount - currentQty);
+          if (canAdd <= 0) return state;
           if (existing) {
             return {
               items: state.items.map(i =>
                 i.product.id === product.id
-                  ? { ...i, quantity: i.quantity + quantity }
+                  ? { ...i, quantity: i.quantity + canAdd }
                   : i
               ),
             };
           }
-          return { items: [...state.items, { product, quantity }] };
+          return { items: [...state.items, { product, quantity: canAdd }] };
         });
       },
 
@@ -51,7 +55,9 @@ export const useCartStore = create<CartState>()(
         }
         set(state => ({
           items: state.items.map(i =>
-            i.product.id === productId ? { ...i, quantity } : i
+            i.product.id === productId
+              ? { ...i, quantity: Math.min(i.product.stockCount, quantity) }
+              : i
           ),
         }));
       },
@@ -70,6 +76,6 @@ export const useCartStore = create<CartState>()(
           0
         ),
     }),
-    { name: 'stitchpro-cart' }
+    { name: 'Olmach Nig Ltd-cart' }
   )
 );

@@ -19,6 +19,10 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
+    if (!product.inStock || product.stockCount === 0) {
+      toast.error('This item is out of stock');
+      return;
+    }
     addToCart(product);
     toast.success(`${product.name} added to cart!`, { duration: 2000 });
     openCart();
@@ -72,30 +76,39 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
         )}
 
+        {/* Out of stock overlay */}
+        {(!product.inStock || product.stockCount === 0) && (
+          <div className="absolute inset-0 bg-navy-900/60 flex items-center justify-center">
+            <span className="bg-white text-navy-900 font-bold text-xs px-3 py-1.5 rounded-full tracking-wide uppercase">Out of Stock</span>
+          </div>
+        )}
+
         {/* Hover actions */}
-        <div className="absolute inset-0 bg-navy-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-          <button
-            onClick={handleWishlist}
-            className={`p-2.5 rounded-full transition-colors ${
-              wished
-                ? 'bg-red-500 text-white'
-                : 'bg-white text-navy-900 hover:bg-gold-500'
-            }`}
-            title="Add to wishlist"
-          >
-            <Heart className={`w-4 h-4 ${wished ? 'fill-white' : ''}`} />
-          </button>
-          <button
-            onClick={handleAddToCart}
-            className="p-2.5 bg-gold-500 text-navy-900 rounded-full hover:bg-gold-600 transition-colors"
-            title="Add to cart"
-          >
-            <ShoppingCart className="w-4 h-4" />
-          </button>
-          <span className="p-2.5 bg-white text-navy-900 rounded-full hover:bg-cream-100 transition-colors cursor-pointer">
-            <Eye className="w-4 h-4" />
-          </span>
-        </div>
+        {product.inStock && product.stockCount > 0 && (
+          <div className="absolute inset-0 bg-navy-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+            <button
+              onClick={handleWishlist}
+              className={`p-2.5 rounded-full transition-colors ${
+                wished
+                  ? 'bg-red-500 text-white'
+                  : 'bg-white text-navy-900 hover:bg-gold-500'
+              }`}
+              title="Add to wishlist"
+            >
+              <Heart className={`w-4 h-4 ${wished ? 'fill-white' : ''}`} />
+            </button>
+            <button
+              onClick={handleAddToCart}
+              className="p-2.5 bg-gold-500 text-navy-900 rounded-full hover:bg-gold-600 transition-colors"
+              title="Add to cart"
+            >
+              <ShoppingCart className="w-4 h-4" />
+            </button>
+            <span className="p-2.5 bg-white text-navy-900 rounded-full hover:bg-cream-100 transition-colors cursor-pointer">
+              <Eye className="w-4 h-4" />
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Content */}
@@ -126,12 +139,19 @@ export default function ProductCard({ product }: ProductCardProps) {
               )}
             </div>
 
-            <button
-              onClick={handleAddToCart}
-              className="text-xs bg-navy-900 hover:bg-gold-500 hover:text-navy-900 text-white font-semibold px-3 py-1.5 rounded-lg transition-colors duration-200"
-            >
-              Add to Cart
-            </button>
+            {product.inStock && product.stockCount > 0 ? (
+              <button
+                type="button"
+                onClick={handleAddToCart}
+                className="text-xs bg-navy-900 hover:bg-gold-500 hover:text-navy-900 text-white font-semibold px-3 py-1.5 rounded-lg transition-colors duration-200"
+              >
+                Add to Cart
+              </button>
+            ) : (
+              <span className="text-xs bg-gray-200 text-gray-400 font-semibold px-3 py-1.5 rounded-lg cursor-not-allowed">
+                Out of Stock
+              </span>
+            )}
           </div>
         </div>
       </div>

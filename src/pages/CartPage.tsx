@@ -77,11 +77,15 @@ export default function CartPage() {
                     </span>
                     <button
                       onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                      className="p-2 text-navy-900 hover:text-gold-600 transition-colors"
+                      disabled={item.quantity >= item.product.stockCount}
+                      className="p-2 transition-colors disabled:opacity-30 disabled:cursor-not-allowed text-navy-900 hover:text-gold-600"
                     >
                       <Plus className="w-3.5 h-3.5" />
                     </button>
                   </div>
+                  {item.quantity >= item.product.stockCount && (
+                    <span className="text-xs text-orange-500 font-medium">Max stock</span>
+                  )}
                   <button
                     onClick={() => removeItem(item.product.id)}
                     className="flex items-center gap-1 text-xs text-gray-400 hover:text-red-500 transition-colors"

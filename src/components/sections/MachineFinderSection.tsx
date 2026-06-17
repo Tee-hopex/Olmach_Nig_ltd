@@ -8,7 +8,7 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { products } from '../../data/products';
+import { useProducts } from '../../hooks/usePublicData';
 import type { Product } from '../../types';
 import ProductCard from '../ui/ProductCard';
 
@@ -58,19 +58,15 @@ const steps: Step[] = [
 
 type Answers = Record<string, string>;
 
-function getRecommendations(answers: Answers): Product[] {
-  let filtered = [...products];
+function getRecommendations(answers: Answers, allProducts: Product[]): Product[] {
+  let filtered = [...allProducts];
 
   if (answers.budget === 'low') {
     filtered = filtered.filter(p => (p.salePrice ?? p.price) < 100000);
   } else if (answers.budget === 'mid') {
-    filtered = filtered.filter(
-      p => (p.salePrice ?? p.price) >= 100000 && (p.salePrice ?? p.price) <= 250000
-    );
+    filtered = filtered.filter(p => (p.salePrice ?? p.price) >= 100000 && (p.salePrice ?? p.price) <= 250000);
   } else if (answers.budget === 'high') {
-    filtered = filtered.filter(
-      p => (p.salePrice ?? p.price) > 250000 && (p.salePrice ?? p.price) <= 500000
-    );
+    filtered = filtered.filter(p => (p.salePrice ?? p.price) > 250000 && (p.salePrice ?? p.price) <= 500000);
   }
 
   if (answers.useCase === 'production') {
@@ -85,7 +81,7 @@ function getRecommendations(answers: Answers): Product[] {
 
   return filtered.slice(0, 3).length > 0
     ? filtered.slice(0, 3)
-    : products.filter(p => p.isBestSeller).slice(0, 3);
+    : allProducts.filter(p => p.isBestSeller).slice(0, 3);
 }
 
 export default function MachineFinderSection() {
@@ -94,6 +90,9 @@ export default function MachineFinderSection() {
   const [recommendations, setRecommendations] = useState<Product[]>([]);
   const [done, setDone] = useState(false);
 
+  const { data } = useProducts({ limit: 100 });
+  const allProducts = data?.products ?? [];
+
   const handleAnswer = (key: string, value: string) => {
     const newAnswers = { ...answers, [key]: value };
     setAnswers(newAnswers);
@@ -101,7 +100,7 @@ export default function MachineFinderSection() {
     if (step < steps.length - 1) {
       setStep(step + 1);
     } else {
-      setRecommendations(getRecommendations(newAnswers));
+      setRecommendations(getRecommendations(newAnswers, allProducts));
       setDone(true);
     }
   };

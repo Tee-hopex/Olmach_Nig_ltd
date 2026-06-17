@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Shield, Users, Award, Truck } from 'lucide-react';
 
 const milestones = [
-  { year: '2018', event: 'StitchPro founded in Lagos with a mission to supply genuine sewing equipment across Nigeria.' },
+  { year: '2018', event: 'Olmach Nig Ltd founded in Lagos with a mission to supply genuine sewing equipment across Nigeria.' },
   { year: '2019', event: 'Became authorised dealer for Singer and Brother brands in Nigeria.' },
   { year: '2020', event: 'Expanded to Juki industrial machines, serving our first garment factory clients.' },
   { year: '2021', event: 'Launched nationwide delivery to all 36 states.' },
@@ -26,13 +26,13 @@ export default function AboutPage() {
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80"
-            alt="About StitchPro"
+            alt="About Olmach Nig Ltd"
             className="w-full h-full object-cover opacity-15"
           />
         </div>
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            About StitchPro Nigeria
+            About Olmach Nig Ltd
           </h1>
           <p className="text-white/70 text-lg leading-relaxed">
             Since 2018, we've been Nigeria's most trusted source for genuine sewing machines
@@ -68,7 +68,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold text-navy-900 mb-4">Our Story</h2>
             <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
               <p>
-                StitchPro was founded in 2018 by a team of fashion industry professionals who
+                Olmach Nig Ltd was founded in 2018 by a team of fashion industry professionals who
                 were frustrated by the counterfeit and poor-quality sewing machines flooding
                 the Nigerian market. We set out to create a trusted destination where tailors,
                 fashion designers and factories could buy with confidence.

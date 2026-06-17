@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, MessageCircle, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Camera, Clock, MessageCircle, CheckCircle } from 'lucide-react';
 import toast from 'react-hot-toast';
-
-const WHATSAPP_NUMBER = '2348012345678';
+import { useSiteSettings } from '../hooks/usePublicData';
 
 export default function ContactPage() {
+  const { data: settings } = useSiteSettings();
+  const WHATSAPP_NUMBER = settings?.whatsappNumber ?? '2348012345678';
+
   const [form, setForm] = useState({
     name: '', email: '', phone: '', subject: '', message: '',
   });
@@ -40,25 +42,25 @@ export default function ContactPage() {
               {
                 icon: MapPin,
                 title: 'Visit Our Showroom',
-                lines: ['14 Fabric Lane, Lagos Island', 'Lagos, Nigeria'],
+                lines: ['43/45 Agarawu Street by Tom-Jones, Lagos Island', 'Lagos, Nigeria'],
                 color: 'text-gold-500',
                 bg: 'bg-gold-500/10',
               },
               {
                 icon: Phone,
                 title: 'Call / WhatsApp',
-                lines: ['+234 801 234 5678', 'Available Mon–Sat, 8am–6pm'],
+                lines: ['09021627280', 'Available Mon–Sat, 8am–6pm'],
                 color: 'text-blue-500',
                 bg: 'bg-blue-500/10',
                 href: `https://wa.me/${WHATSAPP_NUMBER}`,
               },
               {
-                icon: Mail,
-                title: 'Email Us',
-                lines: ['hello@stitchpro.ng', 'We reply within 2 hours'],
+                icon: Camera,
+                title: 'Instagram',
+                lines: ['@Olmach_nig_ltd', 'Follow us for updates and product enquiries'],
                 color: 'text-green-500',
                 bg: 'bg-green-500/10',
-                href: 'mailto:hello@stitchpro.ng',
+                href: 'https://www.instagram.com/Olmach_nig_ltd',
               },
               {
                 icon: Clock,
@@ -141,7 +143,7 @@ export default function ContactPage() {
                         name="phone"
                         value={form.phone}
                         onChange={handleChange}
-                        placeholder="+234 801 234 5678"
+                        placeholder="09021627280"
                         type="tel"
                         className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-gold-500"
                       />

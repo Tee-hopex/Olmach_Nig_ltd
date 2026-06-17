@@ -37,20 +37,20 @@ const trustItems = [
 
 export default function TrustSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-12 sm:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
-          <h2 className="section-heading">Why Buy from StitchPro?</h2>
+          <h2 className="section-heading">Why Buy from Olmach Nig Ltd?</h2>
           <p className="section-subheading">
             Over 2,000 satisfied customers across Nigeria trust us for their equipment needs
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {trustItems.map(item => (
             <div
               key={item.title}
-              className="text-center p-6 rounded-2xl border border-gray-100 hover:border-gold-200 hover:shadow-card transition-all duration-300"
+              className="text-center p-5 sm:p-6 rounded-2xl border border-gray-100 hover:border-gold-200 hover:shadow-card transition-all duration-300"
             >
               <div
                 className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl ${item.bg} mb-4`}

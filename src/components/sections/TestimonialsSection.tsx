@@ -8,7 +8,7 @@ export default function TestimonialsSection() {
         <div className="text-center mb-10">
           <h2 className="section-heading">What Our Customers Say</h2>
           <p className="section-subheading">
-            Over 2,000 tailors, fashion designers and businesses trust StitchPro
+            Over 2,000 tailors, fashion designers and businesses trust Olmach Nig Ltd
           </p>
         </div>
 

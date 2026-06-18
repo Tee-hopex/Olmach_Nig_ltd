@@ -8,7 +8,7 @@ export const testimonials: Testimonial[] = [
     location: 'Lagos, Nigeria',
     avatar: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80',
     rating: 5,
-    review: 'I ordered the Juki DDL-8700 and it transformed my business. Delivery was fast and the machine came fully set up with instructions. My production speed has doubled. StitchPro is my go-to shop for all equipment needs!',
+    review: 'I ordered the Juki DDL-8700 and it transformed my business. Delivery was fast and the machine came fully set up with instructions. My production speed has doubled. Olmach Nig Ltd is my go-to shop for all equipment needs!',
     product: 'Juki DDL-8700 Industrial',
     date: '2024-11-15',
   },
@@ -63,7 +63,7 @@ export const testimonials: Testimonial[] = [
     location: 'Kano, Kano',
     avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80',
     rating: 5,
-    review: 'We\'ve purchased over 20 industrial machines from StitchPro over the past two years. Consistent quality, genuine products every time, and the after-sales support is exceptional. They are true partners in our business.',
+    review: 'We\'ve purchased over 20 industrial machines from Olmach Nig Ltd over the past two years. Consistent quality, genuine products every time, and the after-sales support is exceptional. They are true partners in our business.',
     date: '2024-09-18',
   },
 ];

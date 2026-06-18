@@ -244,7 +244,7 @@ export const products: Product[] = [
     id: 'prod-7',
     name: 'Professional Tailor Starter Kit',
     slug: 'professional-tailor-starter-kit',
-    brand: 'StitchPro',
+    brand: 'Olmach Nig Ltd',
     category: 'starter-kits',
     price: 75000,
     images: [
@@ -357,7 +357,7 @@ export const products: Product[] = [
     id: 'prod-10',
     name: 'Fabric Cutting Machine Pro',
     slug: 'fabric-cutting-machine-pro',
-    brand: 'StitchPro',
+    brand: 'Olmach Nig Ltd',
     category: 'cutting-equipment',
     price: 125000,
     images: [
@@ -367,7 +367,7 @@ export const products: Product[] = [
     rating: 4.5,
     reviewCount: 38,
     shortDescription: 'Electric rotary cutter with 45mm blade. Cuts up to 6 layers of fabric cleanly and precisely.',
-    description: 'The StitchPro Fabric Cutting Machine Pro is an electric rotary cutter designed for speed and precision. Ideal for cutting multiple layers of fabric in straight lines, it dramatically reduces cutting time for professional tailors and dressmakers.',
+    description: 'The Olmach Nig Ltd Fabric Cutting Machine Pro is an electric rotary cutter designed for speed and precision. Ideal for cutting multiple layers of fabric in straight lines, it dramatically reduces cutting time for professional tailors and dressmakers.',
     features: [
       'Electric motor for effortless cutting',
       '45mm tungsten blade',
@@ -431,7 +431,7 @@ export const products: Product[] = [
     id: 'prod-12',
     name: 'Tailor\'s Training Guide Bundle',
     slug: 'tailors-training-guide-bundle',
-    brand: 'StitchPro',
+    brand: 'Olmach Nig Ltd',
     category: 'training-materials',
     price: 35000,
     images: [

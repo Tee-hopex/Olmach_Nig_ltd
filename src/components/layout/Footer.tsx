@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Scissors, MapPin, Phone, Mail, Globe, Camera, PlayCircle } from 'lucide-react';
+import { Scissors, MapPin, Phone, Globe, Camera, PlayCircle } from 'lucide-react';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -10,16 +10,17 @@ const quickLinks = [
 ];
 
 const categories = [
-  { label: 'Sewing Machines', href: '/shop?category=sewing-machines' },
-  { label: 'Industrial Machines', href: '/shop?category=industrial-machines' },
-  { label: 'Embroidery Machines', href: '/shop?category=embroidery-machines' },
-  { label: 'Cutting Equipment', href: '/shop?category=cutting-equipment' },
-  { label: 'Starter Kits', href: '/shop?category=starter-kits' },
-  { label: 'Spare Parts', href: '/shop?category=spare-parts' },
+  { label: 'Industrial Straight', href: '/shop?category=industrial-straight' },
+  { label: 'Industrial Overlocking', href: '/shop?category=industrial-overlocking' },
+  { label: 'Weaving Machines', href: '/shop?category=weaving-machines' },
+  { label: 'Tapping & Hemming', href: '/shop?category=tapping-hemming' },
+  { label: 'Heat Transfer & Press', href: '/shop?category=heat-transfer' },
+  { label: 'Plotter Cutters', href: '/shop?category=plotter-cutters' },
+  { label: 'Manual Machines', href: '/shop?category=manual-machines' },
 ];
 
 const customerService = [
-  { label: 'Track Your Order', href: '/contact' },
+  { label: 'Track Your Order', href: '/track-order' },
   { label: 'Returns & Warranty', href: '/contact' },
   { label: 'Machine Finder', href: '/#machine-finder' },
   { label: 'FAQs', href: '/contact' },
@@ -38,7 +39,7 @@ export default function Footer() {
               <Scissors className="w-5 h-5 text-navy-900" />
             </div>
             <span className="font-bold text-lg">
-              Stitch<span className="text-gold-400">Pro</span>
+              Olmach <span className="text-gold-400">Nig Ltd</span>
             </span>
           </Link>
           <p className="text-white/60 text-sm leading-relaxed mb-5">
@@ -48,18 +49,24 @@ export default function Footer() {
           <div className="space-y-2 text-sm text-white/70">
             <div className="flex items-start gap-2">
               <MapPin className="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" />
-              <span>14 Fabric Lane, Lagos Island, Lagos, Nigeria</span>
+              <span>43/45 Agarawu Street by Tom-Jones, Lagos Island, Lagos, Nigeria</span>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-gold-400 flex-shrink-0" />
-              <a href="tel:+2348012345678" className="hover:text-gold-400 transition-colors">
-                +234 801 234 5678
+              <a href="tel:+2349021627280" className="hover:text-gold-400 transition-colors">
+                09021627280
               </a>
             </div>
             <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-gold-400 flex-shrink-0" />
-              <a href="mailto:hello@stitchpro.ng" className="hover:text-gold-400 transition-colors">
-                hello@stitchpro.ng
+              <Phone className="w-4 h-4 text-gold-400 flex-shrink-0" />
+              <a href="tel:+2349156562770" className="hover:text-gold-400 transition-colors">
+                09156562770 / 09065300516
+              </a>
+            </div>
+            <div className="flex items-center gap-2">
+              <Camera className="w-4 h-4 text-gold-400 flex-shrink-0" />
+              <a href="https://www.instagram.com/Olmach_nig_ltd" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">
+                @Olmach_nig_ltd
               </a>
             </div>
           </div>
@@ -147,7 +154,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-navy-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
-          <span>© {new Date().getFullYear()} StitchPro Nigeria. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Olmach Nig Ltd. All rights reserved.</span>
           <div className="flex items-center gap-4">
             <span>Secure payments</span>
             <div className="flex gap-2">

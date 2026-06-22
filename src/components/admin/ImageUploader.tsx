@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { Upload, X, Image as ImageIcon, Loader } from 'lucide-react';
+import { Upload, X, Loader } from 'lucide-react';
 import { useUploadImage } from '../../hooks/admin/useAdminProducts';
 
 interface ImageUploaderProps {

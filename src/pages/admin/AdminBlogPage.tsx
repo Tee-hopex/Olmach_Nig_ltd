@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Plus, Pencil, Trash2, FileText, X, Loader, Eye } from 'lucide-react';
+import { Plus, Pencil, Trash2, FileText, X, Loader } from 'lucide-react';
 import AdminLayout from '../../components/admin/AdminLayout';
 import { useAdminBlog } from '../../hooks/admin/useAdminDashboard';
 import { adminApi } from '../../lib/api';

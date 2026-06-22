@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, type Resolver } from 'react-hook-form';
 import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
 import { z } from 'zod';
 import { Save, Loader, Settings } from 'lucide-react';
@@ -25,7 +25,7 @@ export default function AdminSettingsPage() {
   const qc = useQueryClient();
 
   const { register, handleSubmit, reset, formState: { isSubmitting } } = useForm<FormData>({
-    resolver: standardSchemaResolver(schema),
+    resolver: standardSchemaResolver(schema) as unknown as Resolver<FormData>,
   });
 
   useEffect(() => {

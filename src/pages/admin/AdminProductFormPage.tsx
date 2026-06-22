@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useForm, useFieldArray } from 'react-hook-form';
+import { useForm, useFieldArray, type Resolver } from 'react-hook-form';
 import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
 import { z } from 'zod';
 import { Plus, Trash2, ArrowLeft, Loader } from 'lucide-react';
@@ -43,7 +43,7 @@ export default function AdminProductFormPage() {
   const updateProduct = useUpdateProduct(id ?? '');
 
   const { register, control, handleSubmit, setValue, watch, reset, formState: { errors } } = useForm<FormData>({
-    resolver: standardSchemaResolver(schema),
+    resolver: standardSchemaResolver(schema) as unknown as Resolver<FormData>,
     defaultValues: {
       inStock: true,
       stockCount: 0,

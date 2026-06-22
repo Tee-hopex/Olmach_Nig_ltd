@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, Bell, Search } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import Sidebar from './Sidebar';
 import { useAdminStore } from '../../store/adminStore';
 

@@ -14,7 +14,7 @@ const BADGE_COLORS: Record<string, string> = {
 export default function AdminProductsPage() {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState('');
-  const [category, setCategory] = useState('');
+  const [category] = useState('');
 
   const { data, isLoading } = useAdminProducts({ page, limit: 15, ...(search ? { search } : {}), ...(category ? { category } : {}) });
   const deleteProduct = useDeleteProduct();

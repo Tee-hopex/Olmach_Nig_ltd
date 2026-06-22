@@ -104,7 +104,7 @@ export default function TrackOrderPage() {
               <div>
                 <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">Order #{order.orderNumber}</p>
                 <p className={`text-lg font-bold ${cfg.color}`}>{cfg.label}</p>
-                <p className="text-sm text-gray-500">{order.deliveryAddress}</p>
+                <p className="text-sm text-gray-500">{order.address}, {order.city}, {order.state}</p>
               </div>
             </div>
 

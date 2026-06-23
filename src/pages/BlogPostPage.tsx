@@ -1,5 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { Clock, ArrowLeft, Tag, MessageCircle } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { useBlogPost, useBlogPosts, useSiteSettings } from '../hooks/usePublicData';
 
 function Skeleton() {
@@ -17,22 +19,76 @@ function Skeleton() {
   );
 }
 
-function renderContent(content: string) {
-  return content.split('\n\n').map((para, i) => {
-    if (para.startsWith('**') && para.endsWith('**')) {
-      return <h3 key={i} className="font-bold text-navy-900 text-base mt-6 mb-2">{para.replace(/\*\*/g, '')}</h3>;
-    }
-    if (para.trim().startsWith('**')) {
-      const parts = para.split('**');
-      return (
-        <p key={i} className="mb-4">
-          {parts.map((part, j) => j % 2 === 1 ? <strong key={j} className="text-navy-900">{part}</strong> : part)}
-        </p>
-      );
-    }
-    return para.trim() ? <p key={i} className="mb-4 text-gray-600">{para.trim()}</p> : null;
-  });
-}
+const mdComponents = {
+  h2: ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h2 className="text-xl font-bold text-navy-900 mt-10 mb-4 pb-2 border-b border-gray-100">
+      {children}
+    </h2>
+  ),
+  h3: ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h3 className="text-base font-bold text-navy-900 mt-7 mb-2.5">{children}</h3>
+  ),
+  p: ({ children }: React.HTMLAttributes<HTMLParagraphElement>) => (
+    <p className="text-gray-600 leading-relaxed mb-5 text-[15px]">{children}</p>
+  ),
+  strong: ({ children }: React.HTMLAttributes<HTMLElement>) => (
+    <strong className="font-semibold text-navy-900">{children}</strong>
+  ),
+  ul: ({ children }: React.HTMLAttributes<HTMLUListElement>) => (
+    <ul className="space-y-2.5 mb-5">{children}</ul>
+  ),
+  ol: ({ children }: React.HTMLAttributes<HTMLOListElement>) => (
+    <ol className="space-y-2.5 mb-5 counter-reset-list">{children}</ol>
+  ),
+  li: ({ children, ...props }: React.HTMLAttributes<HTMLLIElement> & { ordered?: boolean; index?: number }) => {
+    const isOrdered = (props as { ordered?: boolean }).ordered;
+    return isOrdered ? (
+      <li className="flex items-start gap-2.5 text-gray-600 text-[15px] leading-relaxed list-none">
+        <span className="mt-0.5 min-w-[1.5rem] h-6 flex items-center justify-center rounded-full bg-navy-900 text-white text-xs font-bold flex-shrink-0">
+          {(props as { index?: number }).index !== undefined ? (props as { index?: number }).index! + 1 : ''}
+        </span>
+        <span className="pt-0.5">{children}</span>
+      </li>
+    ) : (
+      <li className="flex items-start gap-2.5 text-gray-600 text-[15px] leading-relaxed list-none">
+        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0" />
+        <span>{children}</span>
+      </li>
+    );
+  },
+  table: ({ children }: React.HTMLAttributes<HTMLTableElement>) => (
+    <div className="overflow-x-auto mb-6 rounded-xl border border-gray-200 shadow-sm">
+      <table className="w-full text-sm text-left">{children}</table>
+    </div>
+  ),
+  thead: ({ children }: React.HTMLAttributes<HTMLTableSectionElement>) => (
+    <thead className="bg-navy-900 text-white">{children}</thead>
+  ),
+  tbody: ({ children }: React.HTMLAttributes<HTMLTableSectionElement>) => (
+    <tbody className="divide-y divide-gray-100">{children}</tbody>
+  ),
+  tr: ({ children }: React.HTMLAttributes<HTMLTableRowElement>) => (
+    <tr className="even:bg-gray-50/60 hover:bg-gold-50/40 transition-colors">{children}</tr>
+  ),
+  th: ({ children }: React.HTMLAttributes<HTMLTableCellElement>) => (
+    <th className="px-4 py-3 font-semibold text-xs uppercase tracking-wide whitespace-nowrap">{children}</th>
+  ),
+  td: ({ children }: React.HTMLAttributes<HTMLTableCellElement>) => (
+    <td className="px-4 py-3 text-gray-600 align-top">{children}</td>
+  ),
+  blockquote: ({ children }: React.HTMLAttributes<HTMLQuoteElement>) => (
+    <blockquote className="border-l-4 border-gold-400 bg-gold-50 pl-4 pr-3 py-3 rounded-r-xl mb-5 text-gray-700 italic">
+      {children}
+    </blockquote>
+  ),
+  code: ({ children }: React.HTMLAttributes<HTMLElement>) => (
+    <code className="bg-gray-100 text-red-600 text-xs px-1.5 py-0.5 rounded font-mono">{children}</code>
+  ),
+  hr: () => <hr className="my-8 border-gray-100" />,
+  a: ({ href, children }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
+    <a href={href} className="text-red-600 hover:text-red-700 underline underline-offset-2">{children}</a>
+  ),
+};
 
 export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -85,20 +141,30 @@ export default function BlogPostPage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-        <div className="bg-white rounded-2xl p-6 md:p-10 shadow-card mb-10">
-          <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
-            {renderContent(content)}
+        <div className="bg-white rounded-2xl p-6 md:p-10 shadow-card mb-6">
+          {/* Excerpt callout */}
+          {post.excerpt && (
+            <p className="text-base text-gray-500 italic border-l-4 border-gold-400 pl-4 mb-8 leading-relaxed">
+              {post.excerpt}
+            </p>
+          )}
+          <ReactMarkdown remarkPlugins={[remarkGfm]} components={mdComponents as never}>
+            {content}
+          </ReactMarkdown>
+        </div>
+
+        {/* Tags */}
+        {post.tags?.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-10">
+            {post.tags.map(tag => (
+              <span key={tag} className="flex items-center gap-1 text-xs text-gray-500 bg-white border border-gray-200 px-3 py-1.5 rounded-full">
+                <Tag className="w-3 h-3" /> {tag}
+              </span>
+            ))}
           </div>
-        </div>
+        )}
 
-        <div className="flex flex-wrap gap-2 mb-10">
-          {post.tags.map(tag => (
-            <span key={tag} className="flex items-center gap-1 text-xs text-gray-500 bg-white border border-gray-200 px-3 py-1.5 rounded-full">
-              <Tag className="w-3 h-3" /> {tag}
-            </span>
-          ))}
-        </div>
-
+        {/* CTA */}
         <div className="bg-navy-900 text-white rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-5 mb-12">
           <div className="flex-1 text-center sm:text-left">
             <p className="font-semibold mb-1">Have questions about sewing machines?</p>
@@ -110,6 +176,7 @@ export default function BlogPostPage() {
           </a>
         </div>
 
+        {/* Related articles */}
         {related.length > 0 && (
           <div>
             <h3 className="font-bold text-navy-900 text-lg mb-5">More Articles</h3>

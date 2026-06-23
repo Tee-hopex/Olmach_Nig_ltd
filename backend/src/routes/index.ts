@@ -18,6 +18,7 @@ const router = Router();
 router.post('/auth/login', auth.login);
 router.get('/auth/me', requireAuth, auth.getMe);
 router.patch('/auth/password', requireAuth, auth.changePassword);
+router.patch('/auth/credentials', requireAuth, auth.changeCredentials);
 
 // ── Products (public) ─────────────────────────────────────
 router.get('/products', products.getProducts);

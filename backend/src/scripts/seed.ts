@@ -1103,6 +1103,381 @@ The complete set includes the machine head, heavy-duty stand, work table, hand w
   }
 
   console.log(`\n🎉 Done! Seeded ${products.length} products across 7 categories.\n`);
+
+  // ── BLOG POSTS ────────────────────────────────────────────────────────────
+  console.log('Seeding blog posts...\n');
+
+  const blogPosts = [
+    {
+      title: 'How to Choose the Right Industrial Sewing Machine for Your Business',
+      slug: 'how-to-choose-industrial-sewing-machine',
+      excerpt: 'With dozens of industrial sewing machines on the market, choosing the right one for your tailoring or garment business can be overwhelming. Here\'s a practical guide to help you decide.',
+      content: `Starting or scaling a tailoring business in Nigeria comes with one critical decision: which sewing machine should you invest in? The wrong choice can slow down your production, increase maintenance costs, and frustrate your workers. The right machine, however, becomes the backbone of your operation for years to come.
+
+## Understand Your Stitch Type First
+
+The most fundamental question is: what type of stitching do you primarily need?
+
+**Straight/Lockstitch machines** (like the Juki DDL-8700 or Two Lion 8700) are the workhorses of every tailoring shop. They produce the standard single-needle straight stitch used for seaming shirts, trousers, and most garments. If you only buy one machine, make it a straight stitch industrial machine.
+
+**Overlocking machines** are essential once you move beyond basic tailoring. They trim the fabric edge and encase it with thread simultaneously, preventing fraying and giving your garments that professional finish. A good 4-thread overlocker like the Jukae 747 is indispensable for production work.
+
+## Consider Your Volume
+
+Single operators working on bespoke tailoring can get by with a standard clutch motor machine. However, if you're running a production line or doing bulk orders, invest in a **direct drive machine**. Direct drive motors are quieter, more energy-efficient, and allow for precise speed control — which significantly reduces errors and fatigue.
+
+## New vs UK-Used Machines
+
+UK-used machines are a popular option for startups in Nigeria. A properly serviced UK-used Brother or Juki can offer excellent value — these machines were often used in European factories under strict maintenance schedules. The key is buying from a reputable dealer who can verify the machine's history and offer a warranty.
+
+New machines offer peace of mind with manufacturer warranties and consistent performance from day one. For a growing business, the investment in a new machine often pays off in reduced downtime.
+
+## Think About After-Sales Support
+
+A machine is only as good as the support behind it. Before buying, ask your dealer:
+- Do you stock spare parts for this model?
+- Can you service the machine if it breaks down?
+- What is the warranty period?
+
+At Olmach Nig Ltd, we stock spare parts and offer servicing for every machine we sell. Our team on Lagos Island is always available for technical support.
+
+## Quick Selection Guide
+
+| Use Case | Recommended Machine |
+|----------|-------------------|
+| Small tailoring shop | Two Lion 8700 Straight |
+| Production line | Juki DDL-8700 Direct Drive |
+| Edge finishing | Jukae 4-Thread Overlocker |
+| Home/starter | Jukky Manual Machine |
+| Full workshop setup | Straight + Overlocker combo |
+
+The best machine is the one that matches your current workload while leaving room to grow. Start with the fundamentals — a quality straight stitch machine and an overlocker — and build from there.`,
+      image: 'https://images.unsplash.com/photo-1630930678172-63343537a00a?auto=format&fit=crop&w=1200&q=80',
+      category: 'Buying Guide',
+      author: 'Olmach Team',
+      published: true,
+      tags: ['buying guide', 'industrial machines', 'tailoring business'],
+    },
+    {
+      title: 'Overlocking vs Straight Stitch: When to Use Each Machine',
+      slug: 'overlocking-vs-straight-stitch',
+      excerpt: 'Many tailors confuse when to use an overlocker versus a straight stitch machine. Understanding the difference can dramatically improve the quality and durability of your garments.',
+      content: `One of the most common questions we get from new tailors and garment makers is: "Do I really need an overlocker if I already have a straight stitch machine?" The short answer is yes — and here's why.
+
+## What Each Machine Does
+
+**The Straight Stitch Machine** (lockstitch) forms a seam by interlocking an upper thread with a bobbin thread underneath the fabric. It creates strong, durable seams and is used for:
+- Joining two pieces of fabric together
+- Topstitching and visible stitch lines
+- Hemming with a turned-up edge
+- Virtually all construction seams in a garment
+
+**The Overlocker** (serger) works completely differently. It uses 3–5 threads simultaneously to trim the raw edge of the fabric and wrap threads around that edge in one motion. It is used for:
+- Finishing raw fabric edges to prevent fraying
+- Seaming stretch fabrics (jersey, knit, lycra)
+- Creating clean inside seams on ready-to-wear garments
+- French seam alternatives in production settings
+
+## The Key Rule
+
+Think of it this way: the **straight stitch builds the garment**, the **overlocker finishes it**.
+
+When you sew a shirt, you use a straight stitch machine to join the front and back panels, attach sleeves, and sew the collar. After each seam, you ideally run it through the overlocker to neaten the raw edges so they don't unravel in the wash.
+
+## Can You Use Only an Overlocker?
+
+On stretch fabrics like sportswear or underwear, yes — an overlocker seam alone is often enough because it's both strong and flexible. But for woven fabrics (cotton, linen, ankara, etc.), you need the straight stitch machine for structural seams.
+
+## Which to Buy First?
+
+Buy the **straight stitch machine first**. You can temporarily finish edges by pinking with scissors or folding them under. Once your business grows, add an overlocker — and you'll wonder how you managed without it.
+
+## Thread Counts Matter
+
+- **3-thread overlocker**: Lighter fabrics, edge finishing only
+- **4-thread overlocker**: The standard. Handles both seaming and finishing. The Jukae 747 is our most popular model.
+- **5-thread overlocker**: Heavy-duty production work, adds a safety stitch
+
+For most Nigerian tailoring shops, a 4-thread industrial overlocker covers everything you need.`,
+      image: 'https://images.unsplash.com/photo-1642693252490-ace96a2681ee?auto=format&fit=crop&w=1200&q=80',
+      category: 'Tips & Tricks',
+      author: 'Olmach Team',
+      published: true,
+      tags: ['overlocking', 'straight stitch', 'machine types', 'tips'],
+    },
+    {
+      title: 'Complete Guide to Sewing Machine Maintenance',
+      slug: 'sewing-machine-maintenance-guide',
+      excerpt: 'Regular maintenance is the difference between a machine that lasts 20 years and one that breaks down after 2. Follow these steps to keep your industrial sewing machine running at peak performance.',
+      content: `An industrial sewing machine is a significant investment. Whether you paid ₦150,000 or ₦450,000 for your machine, proper maintenance ensures you get maximum value from that investment. Neglect it, and you'll be spending money on repairs — or worse, replacement — far sooner than necessary.
+
+## Daily Maintenance (5 Minutes)
+
+**1. Clean lint and thread debris**
+After every day of use, remove the needle plate and bobbin case. Use a small brush to sweep out lint, loose threads, and fabric dust from the hook area. This is the single most important maintenance task. Lint buildup causes skipped stitches, thread breakage, and eventually damages the hook mechanism.
+
+**2. Check the needle**
+A bent or blunt needle is responsible for at least 50% of sewing problems. If you notice skipped stitches, puckering, or the needle hitting the throat plate, change the needle. Needles are cheap — machine repairs are not.
+
+**3. Re-oil the machine**
+Industrial sewing machines require oiling at specific points. Apply 1–2 drops of sewing machine oil (not cooking oil, not WD-40) to:
+- The hook race
+- All moving metal-on-metal contact points
+- The needle bar
+
+Wipe away excess oil before sewing on fabric — excess oil can stain your work.
+
+## Weekly Maintenance
+
+**1. Deep clean the bobbin area**
+Remove the bobbin case and clean the tension spring. Lint under the tension spring is a major cause of inconsistent lower thread tension.
+
+**2. Check belt tension**
+If your machine uses a V-belt to connect the motor, check that it's properly tensioned. A loose belt causes the machine to run sluggishly and unevenly.
+
+**3. Inspect thread paths**
+Run your finger along the entire thread path from spool to needle. Check all thread guides, tension discs, and the take-up lever for rough spots or burrs that could cause thread breakage.
+
+## Monthly Maintenance
+
+**1. Lubricate all oiling points thoroughly**
+Refer to your machine's manual for the complete list of oiling points. Most industrial machines have between 8 and 15 designated oil points.
+
+**2. Check the motor brushes** (on clutch motor machines)
+Carbon brushes wear down over time. If your machine is slower than usual or sparking, the brushes may need replacement.
+
+**3. Test stitch quality on scrap fabric**
+Before doing a full month's maintenance check, sew on scrap fabric and note any inconsistencies in stitch length, tension, or noise that might indicate a developing problem.
+
+## Signs Your Machine Needs Professional Servicing
+
+- Unusual grinding or knocking noises
+- Consistent thread breakage despite proper threading
+- Skipped stitches that don't improve with needle change
+- Machine running hot to the touch
+- Inconsistent stitch tension that doesn't respond to adjustment
+
+Bring your machine to us at Olmach Nig Ltd on Lagos Island. Our technicians service all brands and models, and we carry most common spare parts in stock.
+
+## The Golden Rule
+
+**Oil little and often.** A few drops daily is better than a thorough oiling once a month. Sewing machine oil is inexpensive. Machine downtime is not.`,
+      image: 'https://images.unsplash.com/photo-1618587194716-40490bdba417?auto=format&fit=crop&w=1200&q=80',
+      category: 'Maintenance',
+      author: 'Olmach Team',
+      published: true,
+      tags: ['maintenance', 'tips', 'care guide', 'industrial machines'],
+    },
+    {
+      title: 'Getting Started with Heat Transfer Printing on Garments',
+      slug: 'heat-transfer-printing-getting-started',
+      excerpt: 'Heat transfer printing has opened up a whole new revenue stream for tailors and garment makers. Here\'s everything you need to know to get started with a heat press machine.',
+      content: `Heat transfer printing is one of the fastest growing segments of the garment decoration industry in Nigeria. With a quality heat press machine and the right materials, you can add custom logos, names, rhinestone designs, and full-colour prints to t-shirts, jerseys, bags, and virtually any fabric item.
+
+## What is Heat Transfer?
+
+Heat transfer is a process where a design printed or pre-made on a special carrier sheet is permanently bonded to fabric using heat and pressure. The heat press machine provides consistent, even heat and pressure — far more consistent than an iron — which is critical for a clean, long-lasting result.
+
+## Types of Heat Transfer
+
+**HTV (Heat Transfer Vinyl)**: Cut vinyl designs pressed onto fabric. Great for team names, numbers, logos, and personalisation. Works with a vinyl plotter cutter and heat press.
+
+**Rhinestone/Stoning Transfers**: Pre-made rhinestone designs on a template that are pressed onto the garment. Extremely popular for fashion tops, children's clothing, and ceremonial wear. Our Jukae and Enel stoning machines are purpose-built for this.
+
+**Sublimation**: Ink is transferred into polyester fabric using heat. Creates photographic-quality, full-colour prints that don't crack or peel. Requires 100% polyester fabric.
+
+**DTF (Direct to Film)**: A newer technology that prints onto a film which is then pressed onto any fabric type. More flexible than sublimation.
+
+## Choosing the Right Heat Press
+
+For a startup operation, the **38×38cm heat press** is the most popular choice. It handles A4-size designs and is compact enough for a small workspace. If you're printing larger items — hoodies, jerseys, jackets — the **40×60cm** or larger format is worth the investment.
+
+Key specifications to look for:
+- **Temperature control**: Must be accurate to ±5°C. Poor temperature control is the leading cause of failed transfers.
+- **Pressure adjustment**: Even pressure across the entire platen is essential.
+- **Digital display**: Analogue gauges are harder to set consistently.
+
+## Basic Heat Transfer Settings
+
+| Transfer Type | Temperature | Time | Pressure |
+|--------------|-------------|------|----------|
+| HTV Vinyl | 150–165°C | 10–15 sec | Medium |
+| Rhinestone | 160–170°C | 12–15 sec | Medium-Heavy |
+| Sublimation | 190–200°C | 45–60 sec | Medium |
+
+Always test on scrap fabric first. Every machine, transfer material, and fabric combination is slightly different.
+
+## Starting Your Heat Transfer Business
+
+The startup cost for a basic heat transfer setup is relatively low:
+1. Heat press machine (38×38): from ₦180,000
+2. Vinyl plotter (for HTV): from ₦460,000
+3. Blank garments: source locally
+4. Transfer materials: vinyl, rhinestone templates, sublimation paper
+
+Many successful garment decorators in Lagos started with just a heat press and pre-made rhinestone transfers, adding a plotter later as the business grew. Visit us at Olmach Nig Ltd — we stock all the machines and can advise on the right setup for your budget.`,
+      image: 'https://images.unsplash.com/photo-1674471361346-38d423db19f3?auto=format&fit=crop&w=1200&q=80',
+      category: 'Business Tips',
+      author: 'Olmach Team',
+      published: true,
+      tags: ['heat transfer', 'heat press', 'garment printing', 'business tips'],
+    },
+    {
+      title: 'How to Set Up Your First Tailoring Workshop in Nigeria',
+      slug: 'setting-up-tailoring-workshop-nigeria',
+      excerpt: 'Opening a tailoring workshop is one of the most rewarding businesses you can start in Nigeria. Here\'s a practical checklist to help you set up professionally from day one.',
+      content: `The tailoring and fashion industry in Nigeria is booming. From corporate wear and school uniforms to Ankara fashion and bridal wear, there is consistent demand for skilled tailors across every city. If you've been considering opening your own workshop, this guide will help you plan it properly.
+
+## Step 1: Define Your Niche
+
+Before buying a single machine, decide what you'll specialise in. The equipment you need varies significantly:
+
+- **Corporate/general tailoring**: Straight stitch + overlocker
+- **Fashion/ankara**: Straight stitch + overlocker + possibly an embroidery machine
+- **School uniforms (bulk)**: 2–3 straight stitch machines, overlocker, hemming machine
+- **Sportswear**: Overlocker with stretch capability, heat press for printing
+- **Bridal/ceremonial**: Straight stitch, overlocker, heat press for embellishments
+
+Focus beats diversity for a startup. You can expand later.
+
+## Step 2: Choose Your Location
+
+A tailoring workshop needs:
+- Good natural light or strong artificial lighting (fatigue is real)
+- Adequate ventilation (lint in the air is a health concern)
+- Stable electricity or a reliable generator
+- Enough space for machines, a cutting table, and storage
+- Accessibility for customers if you're doing bespoke work
+
+A minimum of 250–300 sq ft is comfortable for a 2–3 machine setup.
+
+## Step 3: Essential Equipment List
+
+**Must-have from day one:**
+- 1× Industrial straight stitch machine (e.g. Two Lion 8700 or Juki DDL-8700)
+- 1× Industrial overlocker (e.g. Jukae 747 4-thread)
+- Cutting table (can be a sturdy wooden board)
+- Steam iron + ironing board
+- Dress form/mannequin (at least one)
+- Good scissors + rotary cutter
+
+**Add as you grow:**
+- Second straight stitch machine
+- Hemming/tapping machine (for belt loops and waistbands)
+- Heat press (for branding and embellishment)
+- Embroidery machine
+
+## Step 4: Budget Realistically
+
+Here is a realistic budget range for a starter workshop in Lagos (2025):
+
+| Item | Budget Option | Quality Option |
+|------|--------------|----------------|
+| Straight stitch machine | ₦120,000 (UK used) | ₦250,000+ (new Juki) |
+| Overlocker | ₦130,000 | ₦200,000+ |
+| Iron + board | ₦15,000 | ₦35,000 |
+| Cutting table | ₦20,000 | ₦50,000 |
+| Mannequin | ₦8,000 | ₦25,000 |
+| **Total starter budget** | **~₦300,000** | **~₦600,000+** |
+
+## Step 5: Register Your Business
+
+Register with the Corporate Affairs Commission (CAC) as a business name for as little as ₦10,000. This builds credibility with corporate clients and allows you to open a business account.
+
+## Step 6: Find Your First Clients
+
+- Start with family, friends, and church/mosque community
+- Offer school uniforms to a local school — bulk orders build cash flow
+- Create a WhatsApp Business account and post your work consistently
+- Partner with a fabric shop to get referrals
+
+Your workshop's reputation is built one garment at a time. Focus on quality, delivery time, and professional communication from the very beginning.
+
+We at Olmach Nig Ltd have helped hundreds of tailors set up their workshops over the years. Visit us at 43/45 Agarawu Street, Lagos Island to see our full range of machines and get personalised advice for your setup.`,
+      image: 'https://images.unsplash.com/photo-1675176785803-bffbbb0cd2f4?auto=format&fit=crop&w=1200&q=80',
+      category: 'Business Tips',
+      author: 'Olmach Team',
+      published: true,
+      tags: ['workshop setup', 'tailoring business', 'Nigeria', 'startup guide'],
+    },
+    {
+      title: '5 Signs Your Industrial Sewing Machine Needs Servicing',
+      slug: '5-signs-sewing-machine-needs-servicing',
+      excerpt: 'Don\'t wait until your machine completely breaks down to call a technician. These five warning signs tell you it\'s time for a professional service before a small problem becomes an expensive repair.',
+      content: `Every experienced tailor knows the frustration: you're in the middle of a big order, and your machine starts acting up. Sometimes it's a minor issue you can fix yourself. Other times, it's a warning sign of something more serious. Learning to tell the difference can save you significant money and downtime.
+
+## Sign 1: Skipped Stitches That Don't Go Away
+
+Occasional skipped stitches are normal — they're usually caused by a dull or bent needle, incorrect threading, or the wrong needle size for your fabric. Change the needle and re-thread the machine.
+
+**When to worry**: If skipped stitches persist after changing the needle and checking your threading, the problem is mechanical. The most common culprit is a timing issue — the needle and hook are no longer synchronised properly. This requires professional adjustment and is not a DIY fix on industrial machines.
+
+## Sign 2: Unusual Noises
+
+A well-maintained industrial sewing machine makes a consistent, rhythmic sound. You should know what your machine sounds like at normal speed.
+
+**Warning sounds to listen for**:
+- **Grinding or scraping**: Metal-on-metal contact where there should be none. Could indicate a worn hook, damaged bobbin case, or insufficient lubrication.
+- **Knocking or thumping**: Often a timing issue or loose mechanical component.
+- **High-pitched squealing**: Usually insufficient oil at a specific friction point.
+
+If you notice a new sound, don't ignore it. Running a machine with a mechanical problem causes accelerated wear and can turn a ₦5,000 repair into a ₦50,000 one.
+
+## Sign 3: Thread Breaking Constantly
+
+Thread should not break during normal sewing. When it does, work through this checklist:
+
+1. Check the thread path — is it correctly threaded through every guide?
+2. Check the needle — is it the right size and correctly inserted (flat side back)?
+3. Check the thread tension — is the upper tension set appropriately?
+4. Check the thread itself — old, weak, or low-quality thread breaks easily
+
+**When to call for service**: If thread continues breaking after checking all of the above, the issue is often a burr (rough spot) on a thread guide, the needle plate, or the hook. A technician can locate and polish this out quickly.
+
+## Sign 4: The Machine Runs Hot or Slow
+
+An industrial sewing machine motor should run at consistent speed with minimal heat (the motor will be warm, not hot). If:
+
+- The machine struggles at normal speeds
+- The motor gets very hot quickly
+- The machine slows down under normal fabric thickness
+
+...these indicate motor problems (often worn carbon brushes on clutch motors) or a mechanical binding issue inside the machine that's creating extra load on the motor.
+
+## Sign 5: Inconsistent Stitch Tension You Can't Fix
+
+Proper stitch tension means the seam looks the same on both sides of the fabric. If you're constantly fighting with upper or lower tension, and adjusting the tension dials doesn't give you a clean stitch, something is wrong.
+
+Common causes include:
+- Lint packed under the bobbin case tension spring
+- A damaged tension disc on the upper thread path
+- A worn bobbin case that no longer holds consistent resistance
+
+## What to Do
+
+If you're in Lagos, bring your machine to **Olmach Nig Ltd at 43/45 Agarawu Street, Lagos Island**. We service all brands including Juki, Brother, Jukae, Two Lion, Emel, and Enel. We carry most common spare parts in stock and can usually complete a standard service within 24–48 hours.
+
+Don't wait for a complete breakdown. Regular servicing every 6 months (or every 3 months for heavy production use) keeps your machine performing at its best.`,
+      image: 'https://images.unsplash.com/photo-1564848534648-558dc1ef55c7?auto=format&fit=crop&w=1200&q=80',
+      category: 'Maintenance',
+      author: 'Olmach Team',
+      published: true,
+      tags: ['maintenance', 'troubleshooting', 'machine servicing', 'tips'],
+    },
+  ];
+
+  for (const post of blogPosts) {
+    await prisma.blogPost.upsert({
+      where: { slug: post.slug },
+      update: { ...post },
+      create: { ...post },
+    });
+    console.log(`  ✅ ${post.title}`);
+  }
+
+  console.log(`\n✅ Seeded ${blogPosts.length} blog posts.\n`);
+
+  console.log(`\n🎉 All done!\n`);
   await prisma.$disconnect();
 }
 

@@ -17,6 +17,9 @@ const categories = [
   { label: 'Heat Transfer & Press', href: '/shop?category=heat-transfer' },
   { label: 'Plotter Cutters', href: '/shop?category=plotter-cutters' },
   { label: 'Manual Machines', href: '/shop?category=manual-machines' },
+  { label: 'Embroidery Machines', href: '/shop?category=embroidery-machines' },
+  { label: 'Steaming & Pressing', href: '/shop?category=steaming-pressing' },
+  { label: 'Display & Accessories', href: '/shop?category=display-accessories' },
 ];
 
 const customerService = [

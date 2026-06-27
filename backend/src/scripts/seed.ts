@@ -11,6 +11,9 @@ const CAT_IMAGES: Record<string, string> = {
   'heat-transfer':          'https://images.unsplash.com/photo-1674471361346-38d423db19f3?auto=format&fit=crop&w=800&q=80',
   'plotter-cutters':        'https://images.unsplash.com/photo-1693031630146-568e2f72db0e?auto=format&fit=crop&w=800&q=80',
   'manual-machines':        'https://images.unsplash.com/photo-1564848534648-558dc1ef55c7?auto=format&fit=crop&w=800&q=80',
+  'embroidery-machines':    'https://images.unsplash.com/photo-1526290766257-c015850e4629?auto=format&fit=crop&w=800&q=80',
+  'steaming-pressing':      'https://images.unsplash.com/photo-1489274495757-95c7c837b101?auto=format&fit=crop&w=800&q=80',
+  'display-accessories':    'https://images.unsplash.com/photo-1567631643547-67a2dd59f266?auto=format&fit=crop&w=800&q=80',
 };
 
 async function main() {
@@ -25,6 +28,9 @@ async function main() {
     catHeat,
     catPlotter,
     catManual,
+    catEmbroidery,
+    catSteaming,
+    catDisplay,
   ] = await Promise.all([
     prisma.category.upsert({
       where: { slug: 'industrial-straight' },
@@ -103,6 +109,39 @@ async function main() {
           'Traditional foot-pedal and hand-operated sewing machines — perfect for home tailors, fashion students, and power-cut-proof workshops.',
       },
     }),
+    prisma.category.upsert({
+      where: { slug: 'embroidery-machines' },
+      update: { image: CAT_IMAGES['embroidery-machines'] },
+      create: {
+        name: 'Embroidery Machines',
+        slug: 'embroidery-machines',
+        image: CAT_IMAGES['embroidery-machines'],
+        description:
+          'Computerized embroidery machines for adding logos, monograms, decorative designs, and custom artwork to garments, bags, and accessories.',
+      },
+    }),
+    prisma.category.upsert({
+      where: { slug: 'steaming-pressing' },
+      update: { image: CAT_IMAGES['steaming-pressing'] },
+      create: {
+        name: 'Steaming & Pressing',
+        slug: 'steaming-pressing',
+        image: CAT_IMAGES['steaming-pressing'],
+        description:
+          'Industrial steam irons and boiler pressing systems for professional garment finishing, seam setting, and crease-free fabric preparation.',
+      },
+    }),
+    prisma.category.upsert({
+      where: { slug: 'display-accessories' },
+      update: { image: CAT_IMAGES['display-accessories'] },
+      create: {
+        name: 'Display & Accessories',
+        slug: 'display-accessories',
+        image: CAT_IMAGES['display-accessories'],
+        description:
+          'Retail display mannequins and display props for showcasing garments, accessories, and jewellery in boutiques, market stalls, and exhibitions.',
+      },
+    }),
   ]);
 
   console.log('✅ Categories created\n');
@@ -177,6 +216,16 @@ async function main() {
         slug: 'jukky',
         description:
           'Jukky produces reliable manual sewing machines ideal for home tailors, fashion school training, and small workshops that need electricity-free operation.',
+      },
+    }),
+    prisma.brand.upsert({
+      where: { slug: 'janome' },
+      update: {},
+      create: {
+        name: 'Janome',
+        slug: 'janome',
+        description:
+          'Janome is a Japanese sewing machine manufacturer renowned for innovative computerized sewing and embroidery machines used by home sewers and design studios worldwide.',
       },
     }),
   ]);
@@ -1088,6 +1137,663 @@ The complete set includes the machine head, heavy-duty stand, work table, hand w
       warranty: '1 Year Warranty',
       tags: ['manual', 'treadle', 'hand sewing', 'jukky', 'no electricity', 'beginner', 'fashion school'],
     },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    //  INDUSTRIAL STRAIGHT — NEW ADDITIONS
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Emel M2 Direct Drive Industrial Straight Sewing Machine',
+      slug: 'emel-m2-direct-drive',
+      brand: 'Emel',
+      categoryId: catStraight.id,
+      subcategory: 'Direct Drive',
+      price: 430000,
+      images: [PH],
+      shortDescription:
+        'High-speed direct drive lockstitch machine with inbuilt servo motor for smooth, efficient garment production.',
+      description: `The Emel M2 is an advanced single-needle industrial straight sewing machine featuring an inbuilt servo motor that eliminates the traditional belt-and-clutch system. Designed for Nigerian tailoring shops and garment factories, it delivers general lockstitch sewing on a wide range of materials including chiffon, wool, cotton, lycra, silk, and leather.
+
+The direct drive system offers up to 75% energy savings compared to a standard clutch motor, significantly reduced noise, and minimal vibration for precision stitching. Its auto lubrication system and auto needle positioning mean less downtime and consistent stitch quality across long production runs.
+
+The machine ships as a complete unit with head, accessories, table, and stand — ready for immediate use.`,
+      features: [
+        'Maximum speed: 5,500 stitches per minute',
+        'Max stitch length: 5mm',
+        'Needle size: DB #14, #16, #18',
+        'Inbuilt servo motor — up to 75% energy saving over clutch motors',
+        'Auto needle positioning (up/down) and auto lubrication system',
+        'Built-in LED lamp for illumination',
+        'Digital speed regulation panel',
+        'Sews light, medium, and heavy fabrics including leather',
+      ],
+      specifications: {
+        'Stitch Type': 'Single-needle lockstitch',
+        'Max Speed': '5,500 stitches per minute',
+        'Max Stitch Length': '5mm',
+        'Needle System': 'DB #14, #16, #18',
+        'Motor': 'Inbuilt servo (direct drive)',
+        'Voltage': '220V / 50Hz',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['emel', 'direct drive', 'lockstitch', 'industrial', 'straight stitch', 'm2'],
+    },
+
+    {
+      name: 'Emel EM81 Direct Drive Industrial Straight Sewing Machine',
+      slug: 'emel-em81-direct-drive',
+      brand: 'Emel',
+      categoryId: catStraight.id,
+      subcategory: 'Direct Drive',
+      price: 430000,
+      images: [PH],
+      shortDescription:
+        'Feature-rich direct drive lockstitch machine with automatic thread cutter and digital control panel.',
+      description: `The Emel EM81 builds on the M2 platform with the addition of an automatic thread trimmer, making it one of the most capable machines in Emel's industrial range. It uses an inbuilt servo motor for quiet, energy-efficient operation and comes with a digital panel integrated into the machine head for easy speed regulation.
+
+The EM81 handles all fabric weights from delicate chiffon to heavy canvas and leather, producing neat lockstitch seams on every pass. Its auto lubrication system keeps the machine running reliably with minimal maintenance. Sold as a complete unit with machine head, accessories, table, and stand.`,
+      features: [
+        'Maximum speed: 5,500 stitches per minute',
+        'Max stitch length: 5mm',
+        'Needle size: DB #14, #16, #18',
+        'Machine weight: 32kg head / 38.7kg with stand',
+        'Automatic thread trimmer for clean seam finishing',
+        'Auto needle positioning and auto lubrication',
+        'Built-in LED lamp for visibility',
+        'Energy-saving inbuilt servo motor with digital speed regulation',
+      ],
+      specifications: {
+        'Stitch Type': 'Single-needle lockstitch',
+        'Max Speed': '5,500 stitches per minute',
+        'Max Stitch Length': '5mm',
+        'Needle System': 'DB #14, #16, #18',
+        'Dimensions': '64.5cm x 24.8cm x 55.0cm',
+        'Weight (head)': '32kg',
+        'Weight (with stand)': '38.7kg',
+        'Motor': 'Inbuilt servo (direct drive)',
+        'Voltage': '220V / 50Hz',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['emel', 'em81', 'direct drive', 'lockstitch', 'auto thread cutter', 'industrial'],
+    },
+
+    {
+      name: 'Two Lion 9900 Direct Drive Industrial Straight Sewing Machine',
+      slug: 'two-lion-9900-direct-drive',
+      brand: 'Two Lion',
+      categoryId: catStraight.id,
+      subcategory: 'Direct Drive',
+      price: 380000,
+      images: [PH],
+      shortDescription:
+        'ISO 9002-certified Two Lion direct drive lockstitch machine built for high-throughput garment production.',
+      description: `The Two Lion TL-9900D is a single-needle direct drive industrial lockstitch machine designed to deliver reliable, high-volume performance in garment factories and tailoring shops. Powered by a 550W energy-saving servo motor, it eliminates belt and clutch maintenance while reducing noise and vibration on the production floor.
+
+The machine features automatic needle positioning, an auto lubrication system, and a pilot LED lamp for clear visibility during sewing. It sews all fabric types from lightweight chiffon to heavy denim and is manufactured to ISO 9002 quality standards. Supplied as a complete unit with machine head, accessories, table, and stand.`,
+      features: [
+        'Maximum speed: 5,500 stitches per minute',
+        'Max stitch length: 5mm',
+        'Needle size: DB #14, #16, #18',
+        '550W energy-saving servo motor — no belt or clutch',
+        'Auto needle positioning and auto lubrication system',
+        'ISO 9002 certified manufacturing',
+        'Built-in LED pilot lamp',
+        'Adjustable speed control panel',
+      ],
+      specifications: {
+        'Stitch Type': 'Single-needle lockstitch',
+        'Max Speed': '5,500 stitches per minute',
+        'Max Stitch Length': '5mm',
+        'Needle System': 'DB #14, #16, #18',
+        'Motor': '550W servo (direct drive)',
+        'Certification': 'ISO 9002',
+        'Voltage': '220V / 50Hz',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['two lion', '9900', 'direct drive', 'lockstitch', 'iso 9002', 'industrial', 'straight stitch'],
+    },
+
+    {
+      name: 'Juki DDL-9000C Heavy Duty Direct Drive Industrial Sewing Machine',
+      slug: 'juki-ddl-9000c-heavy-duty',
+      brand: 'Juki',
+      categoryId: catStraight.id,
+      subcategory: 'Direct Drive',
+      price: 700000,
+      images: [PH],
+      shortDescription:
+        'Juki\'s flagship digital direct drive lockstitch system with fully digitalized adjustments and a 4.3-inch touchscreen.',
+      description: `The Juki DDL-9000C Series represents the pinnacle of industrial single-needle lockstitch technology, combining a compact 400W AC servo motor with Juki's proprietary digital sewing system. All machine settings — stitch length, presser foot pressure, feed type, and needle positioning — are fully digitalized and can be saved in up to 99 sewing patterns for instant recall.
+
+Its world-first vertically-driven digital feed mechanism lets operators choose between Standard, Front Up, Rear Up, and Box Feed modes from a 4.3-inch smartphone-style touchscreen, eliminating hand-tool adjustments entirely. The double-edge rotary thread trimmer leaves only 3mm of thread tail, drastically reducing trimming time in production.
+
+Built for serious garment factories that demand repeatability, quality, and speed on medium to heavy fabrics — this is the machine professional workshops upgrade to.`,
+      features: [
+        'Maximum speed: 5,000 stitches per minute',
+        'Max stitch length: 5mm',
+        'Compact 400W AC direct-drive servo motor',
+        '4.3-inch touchscreen — stores up to 99 sewing patterns',
+        'World-first vertically-driven digital feed (4 selectable feed modes)',
+        'Automatic thread trimmer leaving only 3mm thread tail',
+        'Digital presser foot pressure control with auto multi-layer detection',
+        'Presser foot lift: 5.5mm by hand, 15mm by knee',
+      ],
+      specifications: {
+        'Stitch Type': 'Single-needle lockstitch',
+        'Max Speed': '5,000 stitches per minute',
+        'Max Stitch Length': '5mm',
+        'Motor': '400W AC servo (direct drive)',
+        'Control Panel': '4.3-inch touchscreen',
+        'Pattern Memory': '99 sewing patterns',
+        'Thread Tail': '3mm after trimming',
+        'Presser Foot Lift': '5.5mm (manual) / 15mm (knee)',
+        'Voltage': '220V / 50Hz',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: true,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['juki', 'ddl-9000c', 'direct drive', 'digital', 'lockstitch', 'touchscreen', 'premium', 'industrial'],
+    },
+
+    {
+      name: 'Brother Industrial Sewing Machine (UK Used, New Stand & Table)',
+      slug: 'brother-industrial-uk-used-new',
+      brand: 'Brother',
+      categoryId: catStraight.id,
+      subcategory: 'UK Used',
+      price: 290000,
+      images: [PH],
+      shortDescription:
+        'Pre-owned UK-grade Brother direct drive industrial lockstitch machine, supplied with a brand new stand and table.',
+      description: `This listing offers a UK-used Brother single-needle industrial straight stitch sewing machine in excellent working condition, paired with a brand new metal stand and table for immediate production use.
+
+Brother industrial machines are well-regarded for their precision AC servo drive systems, sealed oil tanks that prevent fabric staining, and automatic thread trimmers that consistently leave short, clean thread tails. The machine handles a broad range of fabrics — from light shirting to medium denim — and is well-suited for garment factories, fashion designers, and tailoring studios.
+
+UK-used machines from Brother are maintained to high European servicing standards before resale, making them an excellent value option for shops that want professional-grade performance without the full cost of a new machine.`,
+      features: [
+        'Single-needle direct drive lockstitch (AC servo motor)',
+        'Automatic thread trimmer for clean, short thread tails',
+        'Sealed oil tank — prevents oil leakage and fabric staining',
+        'Electric presser foot lifter for smooth operation',
+        'LED work light illuminates the sewing area',
+        'UK-serviced in excellent working condition',
+        'Brand new metal stand and table included',
+      ],
+      specifications: {
+        'Stitch Type': 'Single-needle lockstitch',
+        'Motor': 'AC servo (direct drive)',
+        'Condition': 'UK Used — excellent',
+        'Stand & Table': 'Brand new (included)',
+        'Thread Trimmer': 'Automatic',
+        'Oil System': 'Sealed (no stain risk)',
+        'Voltage': '220V / 50Hz',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: true,
+      isNew: false,
+      badge: 'Best Seller',
+      warranty: '6 Months Warranty',
+      tags: ['brother', 'uk used', 'direct drive', 'lockstitch', 'industrial', 'new stand', 'value'],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    //  INDUSTRIAL OVERLOCKING — NEW ADDITIONS
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Two Lion 747 Four Thread Industrial Overlock Machine',
+      slug: 'two-lion-747-four-thread-overlock',
+      brand: 'Two Lion',
+      categoryId: catOverlock.id,
+      subcategory: '4-Thread',
+      price: 440000,
+      images: [PH],
+      shortDescription:
+        'Heavy-duty 4-thread industrial overlock machine for high-speed seaming, hemming, and edge finishing on stretch and woven fabrics.',
+      description: `The Two Lion TL-747 is a four-thread industrial overlock machine — known in Nigeria as a weaving machine — that uses two needles and two loopers to form a strong, stretchy, and professionally finished seam in a single pass.
+
+Running at up to 5,000 RPM via a built-in direct drive servo motor, it is ideal for garment factories and knitting mills producing underwear, T-shirts, polo shirts, sportswear, and jersey fabrics. The servo motor delivers approximately 30% greater production efficiency and significant energy savings compared to traditional clutch-motor overlocks.
+
+Its design allows simultaneous trimming, overcasting, and seaming — making it indispensable for professional garment finishing in Nigerian fashion production.`,
+      features: [
+        '4-thread system: 2 needles + 2 loopers for secure, stretchy seams',
+        'Maximum speed: ~5,000 RPM (direct drive servo motor)',
+        'Servo motor — ~30% efficiency gain vs clutch motor',
+        'Simultaneous trimming, overcasting, and seaming in one pass',
+        'Suitable for thin to medium-weight fabrics: jersey, knit, woven',
+        'Ideal for underwear, polo shirts, sportswear, and T-shirt production',
+        'Complete unit with head, accessories, table, and stand',
+      ],
+      specifications: {
+        'Thread Count': '4 threads (2 needles + 2 loopers)',
+        'Max Speed': '~5,000 RPM',
+        'Motor': 'Direct drive servo',
+        'Fabric Range': 'Light to medium-weight woven and knit',
+        'Voltage': '220V / 50Hz',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['two lion', '747', '4-thread', 'overlock', 'weaving machine', 'serger', 'industrial', 'direct drive'],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    //  EMBROIDERY MACHINES
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Janome Memory Craft 550E Embroidery Machine',
+      slug: 'janome-mc550e-embroidery',
+      brand: 'Janome',
+      categoryId: catEmbroidery.id,
+      subcategory: 'Stand-Alone',
+      price: 3300000,
+      images: [PH],
+      shortDescription:
+        'Janome\'s largest stand-alone embroidery machine with a 7.9" × 14.2" field, 180 built-in designs, and full-colour touchscreen editing.',
+      description: `The Janome Memory Craft 550E (MC550E) is a dedicated computerized embroidery machine designed for home-based embroiderers and small studios who need a large embroidery field without moving to industrial multi-head equipment.
+
+With the RE36b magnetic clip hoop, it achieves Janome's widest embroidery area of 7.9" × 14.2", capable of handling designs up to 200,000 stitches. The full-colour LCD touchscreen allows on-screen editing including rotation, scaling, flipping, arc placement, combining, and grouping — with no computer required for USB design loading.
+
+It includes 180 built-in designs, 6 embroidery fonts, and four hoops. The 550E supports .JEF, .JEF+, and .JPX embroidery formats and runs on dual voltage (80–240V), making it suitable for Nigerian power supplies with an appropriate stabilizer.`,
+      features: [
+        'Embroidery area: 7.9" × 14.2" (Janome\'s largest stand-alone field)',
+        'Maximum embroidery speed: 860 stitches per minute',
+        '180 built-in designs + 6 fonts; supports up to 200,000-stitch designs',
+        'Full-colour LCD touchscreen with on-screen editing (rotate, scale, flip, arc, combine)',
+        'USB port for design import; supports .JEF, .JEF+, .JPX formats',
+        '4 included hoops: RE36b, SQ20b, RE20b, SQ14b',
+        'Automatic needle threader and top-loading drop-in bobbin',
+        'Dual voltage 80–240V; machine weight: 5.2 kg',
+      ],
+      specifications: {
+        'Embroidery Area': '7.9" × 14.2"',
+        'Max Speed': '860 stitches per minute',
+        'Built-in Designs': '180 designs + 6 fonts',
+        'Max Design Size': '200,000 stitches',
+        'File Formats': '.JEF, .JEF+, .JPX',
+        'Connectivity': 'USB',
+        'Voltage': '80–240V (dual voltage)',
+        'Weight': '5.2 kg',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: true,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['janome', '550e', 'mc550e', 'embroidery', 'computerized', 'touchscreen', 'usb', 'design studio'],
+    },
+
+    {
+      name: 'Computer Embroidery Machine (Single Head Industrial)',
+      slug: 'computer-embroidery-machine-single-head',
+      brand: 'Generic',
+      categoryId: catEmbroidery.id,
+      subcategory: 'Industrial',
+      price: 450000,
+      images: [PH],
+      shortDescription:
+        'Single-head computerized industrial embroidery machine for commercial logo, monogram, and design embroidery on garments and accessories.',
+      description: `This single-head multi-needle computerized embroidery machine is purpose-built for small embroidery businesses, fashion studios, and garment decorators who need commercial-grade output without the footprint of a multi-head machine.
+
+With 12 needles supporting automatic color changes and a large embroidery field, it handles flat garments, caps, bags, and shoes. A 10-inch LCD touchscreen provides access to onboard design memory, USB import, and speed control. At up to 1,500 stitches per minute, it is significantly faster than domestic embroidery machines and can sustain production runs without overheating.`,
+      features: [
+        '12 needles with automatic color change and thread trimming',
+        'Maximum speed: up to 1,500 stitches per minute',
+        'Large embroidery field: up to 500mm × 1,200mm',
+        '10-inch LCD touchscreen control panel',
+        'USB connectivity; compatible with DST and FDR design formats',
+        'Large onboard memory: up to 20 million stitches / 200+ designs',
+        'Suitable for flat garments, T-shirts, caps, bags, and shoes',
+      ],
+      specifications: {
+        'Needles': '12 (automatic color change)',
+        'Max Speed': '1,500 stitches per minute',
+        'Embroidery Field': 'Up to 500mm × 1,200mm',
+        'Control Panel': '10-inch LCD touchscreen',
+        'File Formats': 'DST, FDR',
+        'Memory': '20 million stitches / 200+ designs',
+        'Voltage': '220V / 50Hz',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['embroidery machine', 'computer embroidery', 'single head', 'industrial', 'commercial', 'logo embroidery'],
+    },
+
+    {
+      name: 'ES6 Embroidery Machine',
+      slug: 'es6-embroidery-machine',
+      brand: 'ES6',
+      categoryId: catEmbroidery.id,
+      subcategory: 'Multi-Function',
+      price: 1750000,
+      images: [PH],
+      shortDescription:
+        'Multi-function computerized embroidery machine with 312 built-in designs and a 7-inch colour touchscreen for design studios.',
+      description: `The ES6 is a popular computerized multi-function embroidery machine widely used in Nigerian fashion studios and design offices for creating embroidered patches, monograms, fabric decorations, and garment embellishments.
+
+Its 7-inch colour LCD touchscreen provides an intuitive interface supporting 11 languages, and the machine ships with 312 built-in embroidery designs plus letters, figures, and border patterns. Pattern storage supports up to 30 million stitches and custom designs can be loaded from USB in DST and DSB formats.
+
+Automatic thread trimming and automatic bobbin winding reduce operator fatigue during extended embroidery sessions. At 14.5 kg and 220V operation, it is compact enough for a design studio desk.`,
+      features: [
+        'Maximum embroidery speed: 860 RPM',
+        'Embroidery area (max): 200mm × 280mm',
+        '312 built-in embroidery designs; built-in letters, figures, and borders',
+        '7-inch colour LCD touchscreen; supports 11 languages',
+        'USB compatible (DST, DSB formats); stores up to 30 million stitches',
+        'Automatic thread trimming and automatic bobbin winding',
+        'Break-thread detection for unattended operation',
+      ],
+      specifications: {
+        'Max Speed': '860 RPM',
+        'Max Embroidery Area': '200mm × 280mm',
+        'Built-in Designs': '312 designs + letters + borders',
+        'Control Panel': '7-inch colour LCD',
+        'Languages': '11 supported',
+        'File Formats': 'DST, DSB',
+        'Memory': '30 million stitches',
+        'Power': '45W at 220V / 50Hz',
+        'Weight': '14.5 kg',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['es6', 'embroidery machine', 'computer embroidery', 'design studio', 'multi-function', 'touchscreen'],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    //  TAPPING & HEMMING — NEW ADDITIONS
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Semi-Automatic Eyelet Machine',
+      slug: 'semi-automatic-eyelet-machine',
+      brand: 'Generic',
+      categoryId: catTapping.id,
+      subcategory: 'Eyelet',
+      price: 250000,
+      images: [PH],
+      shortDescription:
+        'Industrial semi-automatic machine for punching and setting metal eyelets on garments, bags, belts, and canvas.',
+      description: `The semi-automatic eyelet machine is a specialized garment manufacturing tool that punches clean holes and presses metal eyelets tightly onto fabric, leather, vinyl, canvas, and other materials in a single operation.
+
+It bridges the gap between slow hand-press methods and fully automatic production-line machines, making it ideal for medium-scale garment operations in Nigeria. The auto-feed eyelet raceway reduces operator effort — only the washer placement remains manual — enabling consistent eyelet setting at rates of up to 1,800 eyelets per hour.
+
+Common applications include hoodies, corsets, sportswear waistbands, belts, shoes, and decorative garment embellishments. Eyelet size can be customized via interchangeable dies.`,
+      features: [
+        'Output capacity: up to 1,800 eyelets per hour',
+        'Semi-automatic eyelet feeding via raceway; manual washer placement',
+        'Compatible materials: fabric, leather, vinyl, canvas, plastic',
+        'Interchangeable dies for customizable eyelet sizes',
+        'Adjustable punching force and throat depth',
+        'Single-operator use; can integrate into production lines',
+        'Suitable for garments, bags, belts, shoes, and canvas goods',
+      ],
+      specifications: {
+        'Output Capacity': 'Up to 1,800 eyelets per hour',
+        'Feeding System': 'Semi-automatic raceway',
+        'Compatible Materials': 'Fabric, leather, vinyl, canvas, plastic',
+        'Die System': 'Interchangeable (customizable eyelet sizes)',
+        'Voltage': '220V / 50Hz',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['eyelet machine', 'grommet machine', 'garment accessories', 'industrial equipment', 'semi-automatic'],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    //  STEAMING & PRESSING
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Juki Boiler Industrial Steaming Iron',
+      slug: 'juki-boiler-industrial-steam-iron',
+      brand: 'Juki',
+      categoryId: catSteaming.id,
+      subcategory: 'Boiler System',
+      price: 0,
+      images: [PH],
+      shortDescription:
+        'Professional boiler-fed steam iron system from Juki delivering high-pressure, continuous steam for garment finishing.',
+      description: `The Juki (Jeux Sakura) boiler industrial steam iron is a professional-grade steam generator system designed for tailoring shops, garment factories, and dry-cleaning operations.
+
+The stainless steel boiler holds 2.2 litres of water and generates steam at 2.5 bar pressure — up to 10 times faster and more efficient than a conventional household iron. The separate boiler delivers a continuous, consistent steam supply to the lightweight 1.5 kg iron head, allowing the operator to press garments for extended periods without pausing to reheat.
+
+It is ideal for setting seams, shaping collars, and achieving a crisp professional finish on a wide range of fabrics including wool, cotton, silk, and synthetics.`,
+      features: [
+        'Iron head power: 850W; Boiler power: 850W',
+        'Stainless steel boiler capacity: 2.2 litres',
+        'Steam pressure: 2.5 bar',
+        'Iron head weight: 1.5 kg; Total system weight: 14.5 kg',
+        'Up to 10× faster steaming than conventional household irons',
+        'Continuous steam supply for uninterrupted professional pressing',
+        'Suitable for wool, cotton, silk, and synthetic fabrics',
+      ],
+      specifications: {
+        'Iron Power': '850W',
+        'Boiler Power': '850W',
+        'Boiler Capacity': '2.2 litres (stainless steel)',
+        'Steam Pressure': '2.5 bar',
+        'Iron Head Weight': '1.5 kg',
+        'Total System Weight': '14.5 kg',
+        'Voltage': '220–240V',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['juki', 'boiler iron', 'steam iron', 'industrial pressing', 'garment finishing', 'sakura'],
+    },
+
+    {
+      name: 'Industrial Steaming Iron',
+      slug: 'industrial-steaming-iron',
+      brand: 'Generic',
+      categoryId: catSteaming.id,
+      subcategory: 'Steam Iron',
+      price: 70000,
+      images: [PH],
+      shortDescription:
+        'Heavy-duty gravity-feed steam iron for high-volume garment pressing and finishing in tailoring shops.',
+      description: `The industrial steaming iron is a workhorse pressing tool used in Nigerian tailoring shops, garment factories, and laundry services to achieve a professional finish on sewn garments.
+
+Unlike domestic irons, industrial models feature larger soleplates for even heat distribution, a gravity-feed water tank for a constant steam supply, and robust construction rated for all-day use. They are essential for setting seams, eliminating wrinkles, shaping garment panels, and pressing collars and cuffs during and after garment construction.
+
+Models operate at 1,500–2,000W with adjustable steam settings for different fabric types including cotton, polyester, wool, and silk.`,
+      features: [
+        'Power: 1,500–2,000W for fast heat recovery',
+        'Large soleplate for even heat distribution',
+        'Gravity-feed or separate tank for continuous steam supply',
+        'Steam pressure: 2–4 bar (model dependent)',
+        'Adjustable temperature and steam settings for all fabric types',
+        'Heavy-duty construction rated for full-day production use',
+        'Suitable for cotton, wool, polyester, silk, and synthetic blends',
+      ],
+      specifications: {
+        'Power': '1,500–2,000W',
+        'Steam Pressure': '2–4 bar',
+        'Water Supply': 'Gravity-feed tank',
+        'Fabric Compatibility': 'Cotton, wool, polyester, silk, synthetics',
+        'Voltage': '220V / 50Hz',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '6 Months Warranty',
+      tags: ['steam iron', 'industrial iron', 'garment finishing', 'pressing', 'tailoring equipment'],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    //  DISPLAY & ACCESSORIES
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Wooden Hand Male Mannequin',
+      slug: 'wooden-hand-male-mannequin',
+      brand: 'Generic',
+      categoryId: catDisplay.id,
+      subcategory: 'Hand Display',
+      price: 220000,
+      images: [PH],
+      shortDescription:
+        'Articulated solid wood male hand display for showcasing gloves, watches, rings, and jewellery in retail windows and boutiques.',
+      description: `This wooden hand male mannequin is a precision-crafted display prop made from solid hardwood, designed to present men's gloves, watches, bracelets, rings, and fashion accessories in retail stores, market stalls, and photography shoots.
+
+Every finger joint and the wrist are secured to allow smooth, flexible positioning that holds its pose firmly under display conditions. The natural wood finish gives it a warm, premium aesthetic that complements both traditional and contemporary retail settings.
+
+Approximate height is 34–37cm, making it compact enough for countertop display while providing a realistic, lifelike hand form.`,
+      features: [
+        'Material: solid hardwood with natural finish',
+        'Fully articulated finger joints and wrist — holds any pose',
+        'Approximate height: 34–37cm; compact countertop footprint',
+        'Suitable for: gloves, rings, bracelets, watches, cufflinks',
+        'Stable weighted base for freestanding display',
+        'Ideal for retail display, window dressing, and product photography',
+      ],
+      specifications: {
+        'Material': 'Solid hardwood (natural finish)',
+        'Height': '34–37cm (approx.)',
+        'Joint Type': 'Fully articulated fingers and wrist',
+        'Use Cases': 'Gloves, jewellery, watches, cufflinks',
+        'Display Type': 'Countertop / freestanding',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: null,
+      tags: ['mannequin', 'hand mannequin', 'wooden hand', 'display prop', 'jewellery display', 'retail display'],
+    },
+
+    {
+      name: 'Male Mannequin',
+      slug: 'male-mannequin-full-body',
+      brand: 'Generic',
+      categoryId: catDisplay.id,
+      subcategory: 'Full Body',
+      price: 0,
+      images: [PH],
+      shortDescription:
+        'Full-body male display mannequin for showcasing menswear in retail clothing stores, boutiques, and fashion exhibitions.',
+      description: `This full-body male mannequin is manufactured from lightweight, durable fiberglass or high-quality polypropylene and is designed to present menswear — shirts, trousers, suits, sportswear, and accessories — in a lifelike, visually compelling way.
+
+The anatomically proportioned form reflects natural male muscle contours and shoulder width to show how garments will actually fit and drape on the body. Detachable arms, hands, and torso sections make dressing and undressing quick and effortless, while the 360° rotating head allows varied display angles.
+
+A weighted metal base stand provides stability on any retail floor surface.`,
+      features: [
+        'Full-body height: approximately 185cm (6\'1")',
+        'Typical measurements: 36.5" chest / 29.5" waist / 38.5" hip',
+        'Material: lightweight fiberglass or high-density polypropylene',
+        'Detachable arms, hands, torso, and legs for easy dressing',
+        '360° rotating head for varied display angles',
+        'Weighted metal base stand included for stability',
+        'Available in white, black, and skin-tone finishes',
+      ],
+      specifications: {
+        'Height': 'Approx. 185cm',
+        'Chest / Waist / Hip': '36.5" / 29.5" / 38.5"',
+        'Material': 'Fiberglass or high-density polypropylene',
+        'Parts': 'Detachable arms, hands, torso, legs',
+        'Base': 'Weighted metal stand (included)',
+        'Finishes': 'White, black, skin-tone',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: null,
+      tags: ['mannequin', 'male mannequin', 'full body', 'retail display', 'visual merchandising', 'menswear'],
+    },
+
+    {
+      name: 'Female Mannequin',
+      slug: 'female-mannequin-full-body',
+      brand: 'Generic',
+      categoryId: catDisplay.id,
+      subcategory: 'Full Body',
+      price: 0,
+      images: [PH],
+      shortDescription:
+        'Full-body female display mannequin for showcasing womenswear, dresses, and fashion accessories in retail stores and boutiques.',
+      description: `This full-body female mannequin is crafted from durable fiberglass or polypropylene and is used by fashion retailers, boutiques, and market vendors in Nigeria to display dresses, skirts, blouses, traditional attire, and accessories in a realistic, appealing manner.
+
+Its standard sizing — typically 38" chest, 30" waist, and 34" hip — reflects common Nigerian womenswear ready-to-wear proportions. The detachable waist, arms, and legs make garment changes fast during visual merchandising updates.
+
+A sturdy tempered glass or metal base provides stable freestanding display in-store or in window arrangements.`,
+      features: [
+        'Full-body height: approximately 170–175cm',
+        'Typical measurements: 38" chest / 30" waist / 34" hip',
+        'Material: lightweight fiberglass or high-density polypropylene',
+        'Detachable waist, arms, and legs for easy dressing',
+        '360° rotating head; adjustable arm positions',
+        'Stable metal or tempered glass base stand included',
+        'Available in matte white, gloss white, black, and skin-tone finishes',
+      ],
+      specifications: {
+        'Height': 'Approx. 170–175cm',
+        'Chest / Waist / Hip': '38" / 30" / 34"',
+        'Material': 'Fiberglass or high-density polypropylene',
+        'Parts': 'Detachable waist, arms, legs',
+        'Base': 'Metal or tempered glass stand (included)',
+        'Finishes': 'Matte white, gloss white, black, skin-tone',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: null,
+      tags: ['mannequin', 'female mannequin', 'full body', 'retail display', 'visual merchandising', 'womenswear'],
+    },
   ];
 
   // ── INSERT PRODUCTS ───────────────────────────────────────────────────────
@@ -1102,7 +1808,7 @@ The complete set includes the machine head, heavy-duty stand, work table, hand w
     console.log(`  ✅ ${p.name}`);
   }
 
-  console.log(`\n🎉 Done! Seeded ${products.length} products across 7 categories.\n`);
+  console.log(`\n🎉 Done! Seeded ${products.length} products across 10 categories.\n`);
 
   // ── BLOG POSTS ────────────────────────────────────────────────────────────
   console.log('Seeding blog posts...\n');

@@ -33,6 +33,21 @@ const navLinks = [
       { label: 'Plotter Cutters', href: '/shop?category=plotter-cutters' },
     ],
   },
+  {
+    label: 'Embroidery',
+    href: '/shop?category=embroidery-machines',
+    dropdown: [
+      { label: 'Embroidery Machines', href: '/shop?category=embroidery-machines' },
+    ],
+  },
+  {
+    label: 'More',
+    href: '/shop?category=steaming-pressing',
+    dropdown: [
+      { label: 'Steaming & Pressing', href: '/shop?category=steaming-pressing' },
+      { label: 'Display & Accessories', href: '/shop?category=display-accessories' },
+    ],
+  },
   { label: 'Blog', href: '/blog' },
   { label: 'About Us', href: '/about' },
   { label: 'Contact Us', href: '/contact' },

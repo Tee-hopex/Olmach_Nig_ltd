@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, ShoppingCart, Heart, Menu, X, ChevronDown, Scissors } from 'lucide-react';
+import { Search, ShoppingCart, Heart, Menu, X, ChevronDown } from 'lucide-react';
+import logoIcon from '../../assets/logo-icon.png';
 import { useCartStore } from '../../store/cartStore';
 import { useWishlistStore } from '../../store/wishlistStore';
 import { useSearchProducts } from '../../hooks/usePublicData';
@@ -80,11 +81,9 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 gap-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-            <div className="w-9 h-9 bg-navy-900 rounded-lg flex items-center justify-center">
-              <Scissors className="w-5 h-5 text-gold-500" />
-            </div>
-            <span className="font-bold text-navy-900 text-lg leading-none">
-              Olmach <span className="text-gold-500">Nig Ltd</span>
+            <img src={logoIcon} alt="Olmach Nig Ltd" className="h-10 w-auto" />
+            <span className="font-bold text-navy-900 text-lg leading-none hidden sm:block">
+              Olmach <span className="text-red-600">Nig Ltd</span>
             </span>
           </Link>
 
@@ -120,7 +119,7 @@ export default function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-1 sm:gap-2">
-            <button type="button" className="md:hidden p-2 text-navy-900 hover:text-gold-600 transition-colors"
+            <button type="button" aria-label="Search" className="md:hidden p-2 text-navy-900 hover:text-gold-600 transition-colors"
               onClick={() => setSearchOpen(!searchOpen)}>
               <Search className="w-5 h-5" />
             </button>

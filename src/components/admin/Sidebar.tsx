@@ -8,9 +8,9 @@ import {
   FileText,
   Settings,
   LogOut,
-  Scissors,
   ChevronRight,
 } from 'lucide-react';
+import logoIcon from '../../assets/logo-icon.png';
 import { useAdminStore } from '../../store/adminStore';
 import toast from 'react-hot-toast';
 
@@ -66,9 +66,7 @@ export default function Sidebar({ mobileOpen, onClose }: SidebarProps) {
       >
         {/* Logo */}
         <div className="flex items-center gap-3 px-6 py-5 border-b border-white/10">
-          <div className="w-9 h-9 bg-gold-600 rounded-lg flex items-center justify-center flex-shrink-0">
-            <Scissors className="w-5 h-5 text-white" />
-          </div>
+          <img src={logoIcon} alt="Olmach Nig Ltd" className="h-9 w-auto brightness-0 invert flex-shrink-0" />
           <div>
             <p className="font-bold text-white text-sm leading-none">Olmach Nig Ltd</p>
             <p className="text-xs text-gray-500 mt-0.5">Admin Panel</p>

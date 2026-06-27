@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Scissors, MapPin, Phone, Globe, Camera, PlayCircle } from 'lucide-react';
+import { MapPin, Phone, Globe, Camera, PlayCircle } from 'lucide-react';
+import logoFull from '../../assets/logo-full.png';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -37,13 +38,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Brand */}
         <div>
-          <Link to="/" className="flex items-center gap-2 mb-4">
-            <div className="w-9 h-9 bg-gold-500 rounded-lg flex items-center justify-center">
-              <Scissors className="w-5 h-5 text-navy-900" />
-            </div>
-            <span className="font-bold text-lg">
-              Olmach <span className="text-gold-400">Nig Ltd</span>
-            </span>
+          <Link to="/" className="inline-block mb-4">
+            <img src={logoFull} alt="Olmach Nig Ltd" className="h-16 w-auto brightness-0 invert" />
           </Link>
           <p className="text-white/60 text-sm leading-relaxed mb-5">
             Nigeria's most trusted source for genuine sewing machines, industrial equipment and

@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
 import { z } from 'zod';
-import { Eye, EyeOff, Scissors, Loader } from 'lucide-react';
+import { Eye, EyeOff, Loader } from 'lucide-react';
+import logoFull from '../../assets/logo-full.png';
 import { adminApi } from '../../lib/api';
 import { useAdminStore } from '../../store/adminStore';
 import toast from 'react-hot-toast';
@@ -53,11 +54,9 @@ export default function AdminLoginPage() {
         <div className="bg-navy-800 rounded-2xl shadow-2xl border border-white/5 p-8">
           {/* Logo */}
           <div className="flex flex-col items-center mb-8">
-            <div className="w-14 h-14 bg-gold-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-gold-600/30">
-              <Scissors className="w-7 h-7 text-white" />
-            </div>
+            <img src={logoFull} alt="Olmach Nig Ltd" className="h-20 w-auto brightness-0 invert mb-3" />
             <h1 className="text-xl font-bold text-white">Admin Dashboard</h1>
-            <p className="text-sm text-gray-400 mt-1">Olmach Nig Ltd · Sewing Hub</p>
+            <p className="text-sm text-gray-400 mt-1">Sewing Hub · Management</p>
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

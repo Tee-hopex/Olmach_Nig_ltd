@@ -3764,6 +3764,335 @@ Three track light sets provide sufficient coverage for a standard-size tailoring
       warranty: '1 Year Warranty',
       tags: ['track light', 'led track lighting', 'workshop lighting', 'boutique lighting', 'tailoring', 'fashion showroom', 'display lighting', '3 sets', 'energy efficient'],
     },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    //  EMBROIDERY MACHINES — BATCH 3 ADDITIONS
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: '500×800 12-Needle Two-Head Monogram Machine',
+      slug: '500x800-two-head-12-needle-monogram',
+      brand: 'Generic',
+      categoryId: catEmbroidery.id,
+      subcategory: 'Multi-Head Industrial',
+      price: 0,
+      images: [PH],
+      shortDescription: 'A 2-head, 12-needle-per-head industrial monogram embroidery machine with a 500×800mm embroidery field. Doubles output by running two designs simultaneously on separate garments.',
+      description: `The 500×800 Two-Head Monogram Machine is a commercial-grade multi-head embroidery system with two independently operated 12-needle heads, each capable of working on a separate garment at the same time. With a 500mm × 800mm embroidery field per head, it accommodates large-format designs, full-name monograms, and complex logo work.
+
+Running two heads in tandem doubles the output of a single-head machine, making it the right choice for embroidery businesses, uniform decorators, and commercial fashion houses that need to fulfil large orders efficiently. Each head switches automatically between its 12 thread colours, enabling detailed multi-colour designs without manual re-threading.
+
+Both heads are computer-controlled via USB and support standard embroidery file formats.`,
+      features: [
+        '2 embroidery heads operating simultaneously for double production output',
+        '12 needles per head with automatic colour-change system',
+        'Large 500mm × 800mm embroidery field per head',
+        'Computer-controlled via USB; supports DST and standard embroidery formats',
+        'Ideal for large-format designs, logos, and full-name monograms',
+        'Auto thread trimming and break detection on each head',
+      ],
+      specifications: {
+        'Heads': '2',
+        'Needles per Head': '12',
+        'Embroidery Field': '500mm × 800mm per head',
+        'Connectivity': 'USB',
+        'File Formats': 'DST and standard embroidery formats',
+        'Application': 'Commercial logo, monogram, uniform embroidery',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['monogram machine', 'two head', 'multi-head embroidery', '12 needle', '500x800', 'commercial embroidery', 'logo embroidery', 'industrial'],
+    },
+
+    {
+      name: 'ES7 Jukae Single Needle Embroidery Machine',
+      slug: 'es7-jukae-single-needle-embroidery',
+      brand: 'Jukae',
+      categoryId: catEmbroidery.id,
+      subcategory: 'Single Needle',
+      price: 0,
+      images: [PH],
+      shortDescription: 'Jukae ES7 single-needle embroidery machine for adding monograms, decorative designs, and personalised embroidery to garments and accessories.',
+      description: `The Jukae ES7 is a single-needle domestic embroidery machine in Jukae's ES series, designed for fashion designers, tailors, and embroidery businesses wanting to add personalised embroidery to garments, bags, and home textiles.
+
+As a single-needle machine, thread colour changes are done manually, making it well-suited to simple to moderately complex designs. The ES7 builds on earlier ES models with an expanded built-in design library and improved editing capabilities via its colour LCD touchscreen.
+
+It is widely used in Nigerian fashion studios for creating monograms, decorative fabric panels, name embroidery on uniforms, and embellishment work on traditional and contemporary garments.`,
+      features: [
+        'Single-needle embroidery mechanism for garments, bags, and accessories',
+        'Colour LCD touchscreen for design selection and editing',
+        'Expanded built-in design library including alphabets and decorative motifs',
+        'USB connectivity for importing custom embroidery design files',
+        'Automatic thread trimmer and needle threader',
+        'Suitable for cotton, polyester, and blended garment fabrics',
+      ],
+      specifications: {
+        'Model': 'ES7',
+        'Needles': '1 (single needle)',
+        'Brand': 'Jukae',
+        'Connectivity': 'USB',
+        'Display': 'Colour LCD touchscreen',
+        'Ideal For': 'Monograms, decorative embroidery, personalisation',
+      },
+      inStock: true,
+      stockCount: 2,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['jukae', 'es7', 'embroidery machine', 'single needle', 'domestic embroidery', 'monogram', 'personalisation', 'fashion design'],
+    },
+
+    {
+      name: 'ES5 Jukae Single Needle Embroidery Machine',
+      slug: 'es5-jukae-single-needle-embroidery',
+      brand: 'Jukae',
+      categoryId: catEmbroidery.id,
+      subcategory: 'Single Needle',
+      price: 0,
+      images: [PH],
+      shortDescription: 'Jukae ES5 single-needle embroidery machine — an entry-level model in Jukae\'s ES series for monograms, letter embroidery, and simple decorative designs on garments.',
+      description: `The Jukae ES5 is an entry-level single-needle embroidery machine from Jukae's ES series. It is designed for tailors and fashion designers beginning to offer embroidery services who want an affordable, easy-to-operate machine for basic monograms, letter embroidery, and simple decorative designs.
+
+The ES5 includes a selection of built-in embroidery designs and alphabets, and supports USB design import for custom work. As a single-needle machine, it is straightforward to learn and operate, making it a practical first embroidery machine for Nigerian fashion businesses.
+
+It handles standard garment fabrics including cotton, polyester, and blended textiles.`,
+      features: [
+        'Single-needle design for accessible embroidery operation',
+        'Built-in embroidery designs and alphabet fonts',
+        'USB port for importing custom embroidery design files',
+        'Digital display for stitch selection and design preview',
+        'Automatic needle threader for convenient setup',
+        'Suitable for cotton, polyester, and blended garment fabrics',
+      ],
+      specifications: {
+        'Model': 'ES5',
+        'Needles': '1 (single needle)',
+        'Brand': 'Jukae',
+        'Connectivity': 'USB',
+        'Ideal For': 'Basic monograms, letter embroidery, simple designs',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['jukae', 'es5', 'embroidery machine', 'single needle', 'entry level', 'monogram', 'domestic embroidery', 'tailoring'],
+    },
+
+    {
+      name: '500×800 Single-Head 12-Needle Jukky Monogram Machine',
+      slug: '500x800-single-head-jukky-monogram',
+      brand: 'Jukky',
+      categoryId: catEmbroidery.id,
+      subcategory: 'Industrial Single Head',
+      price: 6800000,
+      images: [PH],
+      shortDescription: 'Large-format single-head 12-needle commercial monogram machine with a 500×800mm embroidery field for high-quality logo and design embroidery. Price negotiable.',
+      description: `The 500×800 Single-Head 12-Needle Jukky Monogram Machine is a commercial single-head embroidery system with a 12-needle head and an expansive 500mm × 800mm embroidery field — among the largest available in single-head commercial machines. The wide field accommodates large-format designs, full chest monograms, oversized logos, and complex multi-element compositions in a single hoop.
+
+With 12 needles loaded with different thread colours, the machine switches automatically between colours during the embroidery run, producing detailed multi-colour designs without manual re-threading. It is computer-controlled via USB and supports standard embroidery file formats for a seamless design workflow.
+
+Priced at ₦6.8m — negotiable. This is a serious investment for established embroidery businesses and commercial fashion houses seeking to deliver high-complexity embroidery at scale.`,
+      features: [
+        'Single head with 12 needles for automatic multi-colour thread changes',
+        'Large 500mm × 800mm embroidery field for oversized design and logo work',
+        'Computer-controlled via USB; supports DST and standard file formats',
+        'Auto thread trimming and break detection for unattended production',
+        'High-speed commercial embroidery suitable for bulk order fulfilment',
+        'Jukky brand — reliable commercial build for Nigerian workshop conditions',
+      ],
+      specifications: {
+        'Heads': '1',
+        'Needles': '12',
+        'Embroidery Field': '500mm × 800mm',
+        'Connectivity': 'USB',
+        'File Formats': 'DST and standard embroidery formats',
+        'Brand': 'Jukky',
+        'Price': '₦6.8m (negotiable)',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: true,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['monogram machine', 'single head', 'jukky', '12 needle', '500x800', 'commercial embroidery', 'industrial', 'large format', 'logo embroidery', 'negotiable'],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    //  DISPLAY & ACCESSORIES — BATCH 3 ADDITIONS
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Size 12 Gold Female Mannequin',
+      slug: 'size-12-gold-female-mannequin',
+      brand: 'Generic',
+      categoryId: catDisplay.id,
+      subcategory: 'Full Body',
+      price: 0,
+      images: [PH],
+      shortDescription: 'A size 12 full-body female mannequin finished in a premium metallic gold colour. Ideal for showcasing womenswear in upscale boutiques and fashion showrooms.',
+      description: `The Size 12 Gold Female Mannequin is a full-body female display form finished in a striking metallic gold colour, designed to present size 12 womenswear — including dresses, suits, traditional attire, and evening wear — in a visually premium retail context.
+
+The gold finish sets it apart from standard white or skin-tone mannequins, elevating the perceived value of displayed garments and creating a distinctive boutique aesthetic. It is especially popular in upscale fashion boutiques, bridal display areas, and fashion showrooms where visual merchandising plays a key role in the client experience.
+
+Size 12 proportions ensure accurate representation of how garments fit and drape on the body.`,
+      features: [
+        'Size 12 proportions for accurate womenswear fitting and display',
+        'Premium metallic gold finish for high-fashion retail aesthetics',
+        'Full-body form with natural female proportions',
+        'Detachable sections for easy garment dressing and display changes',
+        'Stable base for freestanding boutique floor display',
+        'Ideal for bridal boutiques, fashion showrooms, and upscale retail stores',
+      ],
+      specifications: {
+        'Size': '12',
+        'Finish': 'Metallic gold',
+        'Type': 'Full-body female mannequin',
+        'Base': 'Stable freestanding stand',
+        'Ideal For': 'Boutiques, bridal display, fashion showrooms',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: null,
+      tags: ['mannequin', 'female mannequin', 'gold mannequin', 'size 12', 'display prop', 'boutique', 'retail display', 'fashion showroom', 'gold finish'],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    //  CUTTING MACHINES — BATCH 3 ADDITIONS
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Size 100 Round Blade Industrial Cutting Machine',
+      slug: 'size-100-round-blade-cutting-machine',
+      brand: 'Generic',
+      categoryId: catCutting.id,
+      subcategory: 'Round Blade',
+      price: 75000,
+      images: [PH],
+      shortDescription: 'Size 100 round blade electric fabric cutting machine for cutting multiple fabric layers with a circular rotating blade. Smoother than straight-knife cutters on curved paths.',
+      description: `The Size 100 Round Blade Cutting Machine is an electric rotary fabric cutting machine with a 100mm circular blade that spins at high speed to cut cleanly through stacked fabric layers. The round blade design is particularly effective for cutting curved pattern lines and large fabric rolls, producing smooth, clean edges on woven and non-woven materials.
+
+Round blade cutters are widely used in Nigerian garment factories alongside straight-knife machines — each suited to different cutting tasks. The circular blade runs cooler than a reciprocating straight knife, reducing the risk of synthetic fabric edges melting during cutting and extending blade service life.
+
+Comes with blade guard and sharpening attachment for easy maintenance.`,
+      features: [
+        'Circular rotating 100mm blade for smooth, clean cuts through fabric layers',
+        'Cooler cutting action than straight-knife — reduces synthetic melting risk',
+        'Suitable for woven fabrics, non-woven materials, and light synthetics',
+        'Ergonomic handle with safety guard for operator protection',
+        'Blade sharpening attachment included for extended blade life',
+        'Standard garment cutting room tool for curved and straight pattern lines',
+      ],
+      specifications: {
+        'Blade Type': 'Round (circular rotary)',
+        'Blade Size': '100mm diameter',
+        'Operation': 'Electric, handheld',
+        'Safety': 'Blade guard included',
+        'Accessories': 'Blade sharpening attachment',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['round blade cutting machine', 'circular blade', 'size 100', 'fabric cutter', 'electric', 'garment production', 'cutting room', 'rotary cutter'],
+    },
+
+    {
+      name: 'Size 110 Round Blade Industrial Cutting Machine',
+      slug: 'size-110-round-blade-cutting-machine',
+      brand: 'Generic',
+      categoryId: catCutting.id,
+      subcategory: 'Round Blade',
+      price: 85000,
+      images: [PH],
+      shortDescription: 'Size 110 round blade electric fabric cutting machine — larger capacity than the size 100 for cutting through thicker fabric stacks and heavier-weight materials.',
+      description: `The Size 110 Round Blade Cutting Machine is a larger capacity round blade cutter with a 110mm diameter blade, providing greater cutting depth than the size 100 for thicker fabric stacks and heavier materials. The increased blade diameter makes it the right choice for production runs involving multiple layers of denim, canvas, or interlined fabrics.
+
+Like all round blade cutters, it delivers smooth, clean edges and reduced heat at the cut compared to reciprocating straight-knife machines. The handheld electric design allows freehand cutting along pattern lines drawn on the top fabric layer.
+
+Comes with blade guard and sharpening attachment.`,
+      features: [
+        'Larger 110mm circular blade for cutting through thicker fabric stacks',
+        'Greater cutting depth than the size 100 round blade model',
+        'Smooth rotating blade action for clean edges on heavy fabrics',
+        'Suitable for denim, canvas, interlined fabrics, and thick synthetics',
+        'Handheld design for freehand cutting along pattern lines',
+        'Blade guard and sharpening attachment included',
+      ],
+      specifications: {
+        'Blade Type': 'Round (circular rotary)',
+        'Blade Size': '110mm diameter',
+        'Operation': 'Electric, handheld',
+        'Safety': 'Blade guard included',
+        'Accessories': 'Blade sharpening attachment',
+        'Advantage': 'Greater depth than size 100',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['round blade cutting machine', 'circular blade', 'size 110', 'fabric cutter', 'electric', 'heavy fabric', 'denim cutting', 'cutting room', 'rotary cutter'],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    //  BUTTON & BUTTONHOLE — BATCH 3 ADDITIONS
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Cover Button Machine (with Interchangeable Dies)',
+      slug: 'cover-button-machine',
+      brand: 'Generic',
+      categoryId: catButton.id,
+      subcategory: 'Button Making',
+      price: 50000,
+      images: [PH],
+      shortDescription: 'A hand press machine for making custom fabric-covered buttons. Comes with multiple interchangeable die sizes so you can cover buttons in different sizes to match any garment fabric.',
+      description: `The Cover Button Machine is a hand-press tool used to create fabric-covered buttons by wrapping a piece of fabric tightly over a metal button shell and clinching the back plate in place. These custom fabric-covered buttons are widely used in Nigerian fashion — particularly for formal wear, ankara outfits, wedding attire, and uniform finishing — where matching a button to the garment fabric creates a polished, professional look.
+
+The machine comes with multiple interchangeable die sets in different sizes, allowing production of cover buttons ranging from small shirt buttons to large coat buttons. The process requires no electricity — the die applies mechanical pressure to complete the button assembly in seconds.
+
+An essential finishing tool for tailors offering premium bespoke garment services.`,
+      features: [
+        'Creates custom fabric-covered buttons from any garment or lining fabric',
+        'Multiple interchangeable die sizes included for different button sizes',
+        'No electricity required — simple mechanical hand press operation',
+        'Fast button-making — each button completed in seconds',
+        'Compatible with lightweight and medium-weight fashion fabrics',
+        'Essential for matching buttons to ankara, lace, and formal wear fabrics',
+      ],
+      specifications: {
+        'Operation': 'Manual hand press (no electricity)',
+        'Dies Included': 'Multiple interchangeable sizes',
+        'Output': 'Fabric-covered buttons',
+        'Applications': 'Formal wear, ankara, wedding attire, uniform finishing',
+        'Ideal For': 'Tailors offering premium bespoke garment finishing',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: null,
+      tags: ['cover button machine', 'button making', 'fabric covered button', 'interchangeable dies', 'tailoring', 'formal wear', 'ankara', 'garment finishing', 'bespoke'],
+    },
   ];
 
   // ── INSERT PRODUCTS ───────────────────────────────────────────────────────

@@ -47,6 +47,9 @@ const navLinks = [
     dropdown: [
       { label: 'Steaming & Pressing', href: '/shop?category=steaming-pressing' },
       { label: 'Display & Accessories', href: '/shop?category=display-accessories' },
+      { label: 'Button & Buttonhole', href: '/shop?category=button-buttonhole' },
+      { label: 'Cutting Machines', href: '/shop?category=cutting-machines' },
+      { label: 'Accessories & Tools', href: '/shop?category=accessories-tools' },
     ],
   },
   { label: 'Blog', href: '/blog' },

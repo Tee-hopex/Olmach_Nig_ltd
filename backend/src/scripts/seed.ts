@@ -3766,6 +3766,48 @@ Three track light sets provide sufficient coverage for a standard-size tailoring
     },
 
     // ═══════════════════════════════════════════════════════════════════════
+    //  STEAMING & PRESSING — BATCH 3 ADDITIONS
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Jukae Industrial Boiler Steaming Iron',
+      slug: 'jukae-boiler-industrial-steam-iron',
+      brand: 'Jukae',
+      categoryId: catSteaming.id,
+      subcategory: 'Boiler System',
+      price: 0,
+      images: [PH],
+      shortDescription: 'Jukae professional boiler-fed industrial steam iron system delivering continuous high-pressure steam for garment finishing, seam setting, and professional pressing.',
+      description: `The Jukae Industrial Boiler Steaming Iron is a professional steam generator and iron system from Jukae, designed for tailoring shops, garment factories, and dry-cleaning operations that need continuous, high-pressure steam for efficient garment finishing.
+
+The separate boiler unit heats water and delivers steam at consistent pressure to a lightweight iron head, allowing the operator to press garments for extended periods without the heat interruptions or limited steam output of a domestic iron. The boiler system delivers far greater steam volume than any household iron, enabling professional-quality pressing results on thick fabrics, tailored seams, structured collars, and lined garments.
+
+Ideal for professional tailors, garment factories, and finishing rooms across Nigeria.`,
+      features: [
+        'Separate boiler unit for continuous, uninterrupted steam supply',
+        'High-pressure steam for professional pressing on all fabric types',
+        'Lightweight iron head for comfortable extended pressing sessions',
+        'Significantly greater steam output than domestic irons',
+        'Suitable for wool, cotton, silk, polyester, and blended fabrics',
+        'Ideal for seam setting, collar shaping, and full garment finishing',
+      ],
+      specifications: {
+        'Brand': 'Jukae',
+        'System Type': 'Boiler + iron head',
+        'Steam Delivery': 'Continuous high-pressure',
+        'Fabric Compatibility': 'Wool, cotton, silk, polyester, blended',
+        'Voltage': '220V / 50Hz',
+      },
+      inStock: true,
+      stockCount: 1,
+      isFeatured: false,
+      isBestSeller: false,
+      isNew: true,
+      badge: 'New',
+      warranty: '1 Year Warranty',
+      tags: ['jukae', 'boiler iron', 'steam iron', 'industrial pressing', 'garment finishing', 'boiler system', 'steaming'],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
     //  EMBROIDERY MACHINES — BATCH 3 ADDITIONS
     // ═══════════════════════════════════════════════════════════════════════
     {

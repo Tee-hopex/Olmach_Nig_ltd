@@ -1,11 +1,15 @@
-import { X, ShoppingBag, Trash2, Plus, Minus } from 'lucide-react';
+import { X, ShoppingBag, Trash2, Plus, Minus, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCartStore } from '../../store/cartStore';
 import { formatPrice } from '../../lib/utils';
+import { buildCartWhatsAppUrl } from '../../lib/whatsapp';
+import { useSiteSettings } from '../../hooks/usePublicData';
 
 export default function CartDrawer() {
   const { items, isOpen, closeCart, removeItem, updateQuantity, getTotalPrice, getTotalItems } =
     useCartStore();
+  const { data: settings } = useSiteSettings();
+  const waNumber = settings?.whatsappNumber ?? '2348012345678';
 
   if (!isOpen) return null;
 
@@ -107,20 +111,27 @@ export default function CartDrawer() {
                 {formatPrice(getTotalPrice())}
               </span>
             </div>
-            <p className="text-xs text-gray-400 text-center">
-              Shipping calculated at checkout
-            </p>
+            <a
+              href={buildCartWhatsAppUrl(items, getTotalPrice(), waNumber)}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeCart}
+              className="flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl transition-colors"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Order via WhatsApp
+            </a>
             <Link
               to="/checkout"
               onClick={closeCart}
-              className="block w-full text-center btn-primary py-3 rounded-xl"
+              className="block w-full text-center btn-secondary py-3 rounded-xl text-sm"
             >
               Proceed to Checkout
             </Link>
             <Link
               to="/cart"
               onClick={closeCart}
-              className="block w-full text-center btn-secondary py-3 rounded-xl"
+              className="block w-full text-center text-xs text-gray-400 hover:text-gray-600 transition-colors"
             >
               View Full Cart
             </Link>

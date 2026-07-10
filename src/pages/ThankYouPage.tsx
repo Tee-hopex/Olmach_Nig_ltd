@@ -117,20 +117,20 @@ export default function ThankYouPage() {
           </div>
         </div>
 
-        {/* WhatsApp support */}
-        <div className="bg-green-50 border border-green-200 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-5 mb-10">
-          <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
-            <MessageCircle className="w-6 h-6 text-green-600" />
+        {/* WhatsApp CTA */}
+        <div className="bg-green-500 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-5 mb-10 text-white">
+          <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <MessageCircle className="w-8 h-8 text-white" />
           </div>
           <div className="flex-1 text-center sm:text-left">
-            <p className="font-semibold text-navy-900 mb-1">Need help with your order?</p>
-            <p className="text-sm text-gray-600">
-              Chat with us on WhatsApp for instant support. Our team responds within minutes.
+            <p className="font-bold text-lg mb-1">Continue on WhatsApp</p>
+            <p className="text-white/80 text-sm">
+              WhatsApp should have opened automatically with your order summary. If not, tap the button to send it now.
             </p>
           </div>
           <a href={`https://wa.me/${waNumber}?text=${waMsg}`} target="_blank" rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-5 py-3 rounded-xl transition-colors flex-shrink-0">
-            <MessageCircle className="w-4 h-4" /> Chat Support
+            className="flex items-center gap-2 bg-white text-green-600 hover:bg-green-50 font-bold px-6 py-3 rounded-xl transition-colors flex-shrink-0 shadow">
+            <MessageCircle className="w-4 h-4" /> Open WhatsApp
           </a>
         </div>
 

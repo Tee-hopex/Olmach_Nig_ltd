@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
-import { Trash2, Plus, Minus, ShoppingBag, ArrowLeft, ArrowRight, Lock } from 'lucide-react';
+import { Trash2, Plus, Minus, ShoppingBag, ArrowLeft, ArrowRight, Lock, MessageCircle } from 'lucide-react';
 import { useCartStore } from '../store/cartStore';
 import { formatPrice } from '../lib/utils';
+import { buildCartWhatsAppUrl } from '../lib/whatsapp';
+import { useSiteSettings } from '../hooks/usePublicData';
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, getTotalPrice, getTotalItems } = useCartStore();
+  const { data: settings } = useSiteSettings();
+  const waNumber = settings?.whatsappNumber ?? '2348012345678';
 
   if (items.length === 0) {
     return (
@@ -127,14 +131,24 @@ export default function CartPage() {
                 <span>{formatPrice(total)}</span>
               </div>
 
+              <a
+                href={buildCartWhatsAppUrl(items, subtotal, waNumber)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-4 rounded-xl text-base transition-colors mb-3"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Order via WhatsApp
+              </a>
+
               <Link
                 to="/checkout"
-                className="w-full block text-center btn-primary py-4 rounded-xl text-base mb-3"
+                className="w-full block text-center btn-secondary py-3.5 rounded-xl text-sm mb-3"
               >
                 Proceed to Checkout <ArrowRight className="inline w-4 h-4 ml-1" />
               </Link>
 
-              <div className="mt-4 space-y-2 text-xs text-gray-400 text-center">
+              <div className="space-y-2 text-xs text-gray-400 text-center">
                 <p className="flex items-center justify-center gap-1.5">
                   <Lock className="w-3.5 h-3.5" /> Secure checkout
                 </p>

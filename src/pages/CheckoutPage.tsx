@@ -10,6 +10,7 @@ import { useCartStore } from '../store/cartStore';
 import { formatPrice } from '../lib/utils';
 import { useSiteSettings } from '../hooks/usePublicData';
 import { api } from '../lib/api';
+import { buildOrderWhatsAppUrl } from '../lib/whatsapp';
 
 const schema = z.object({
   firstName: z.string().min(2, 'First name required'),
@@ -101,6 +102,19 @@ export default function CheckoutPage() {
         order: { orderNumber: string; total: number };
         settings: typeof settings;
       };
+
+      const waNum = (orderSettings ?? settings)?.whatsappNumber ?? '2348012345678';
+      const waUrl = buildOrderWhatsAppUrl(
+        createdOrder.orderNumber,
+        items.map(i => ({
+          name: i.product.name,
+          quantity: i.quantity,
+          price: i.product.salePrice ?? i.product.price,
+        })),
+        createdOrder.total,
+        waNum
+      );
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
 
       clearCart();
       navigate('/thank-you', {

@@ -82,28 +82,28 @@ export default function HeroSection() {
         <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-6 lg:mt-0">
           {[
             {
-              image: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=300&q=80',
+              image: 'https://images.unsplash.com/photo-1643570155378-7ca46b1aa1f5?w=400&q=80',
               label: 'Home Machines',
               sublabel: 'From ₦85,000',
-              href: '/shop?category=sewing-machines',
+              href: '/shop?category=manual-machines',
             },
             {
-              image: 'https://images.unsplash.com/photo-1581093806997-124204d9fa9d?w=300&q=80',
+              image: 'https://images.pexels.com/photos/17710109/pexels-photo-17710109.jpeg?auto=compress&cs=tinysrgb&w=400',
               label: 'Industrial',
-              sublabel: 'From ₦350,000',
-              href: '/shop?category=industrial-machines',
+              sublabel: 'From ₦330,000',
+              href: '/shop?category=industrial-straight',
             },
             {
-              image: 'https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?w=300&q=80',
+              image: 'https://images.unsplash.com/photo-1772351720165-d9218e428cf0?w=400&q=80',
               label: 'Embroidery',
               sublabel: 'From ₦280,000',
               href: '/shop?category=embroidery-machines',
             },
             {
-              image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?w=300&q=80',
-              label: 'Starter Kits',
-              sublabel: 'From ₦35,000',
-              href: '/shop?category=starter-kits',
+              image: 'https://images.unsplash.com/photo-1578353022142-09264fd64295?w=400&q=80',
+              label: 'Accessories',
+              sublabel: 'From ₦5,000',
+              href: '/shop?category=accessories-tools',
             },
           ].map(card => (
             <Link

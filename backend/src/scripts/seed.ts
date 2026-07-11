@@ -4,18 +4,18 @@ import { prisma } from '../lib/prisma';
 const PH = 'https://placehold.co/800x600/111827/FFFFFF?text=Image+Coming+Soon';
 
 const CAT_IMAGES: Record<string, string> = {
-  'industrial-straight':    'https://images.unsplash.com/photo-1630930678172-63343537a00a?auto=format&fit=crop&w=800&q=80',
-  'industrial-overlocking': 'https://images.unsplash.com/photo-1642693252490-ace96a2681ee?auto=format&fit=crop&w=800&q=80',
-  'weaving-machines':       'https://images.unsplash.com/photo-1675176785803-bffbbb0cd2f4?auto=format&fit=crop&w=800&q=80',
-  'tapping-hemming':        'https://images.unsplash.com/photo-1618587194716-40490bdba417?auto=format&fit=crop&w=800&q=80',
-  'heat-transfer':          'https://images.unsplash.com/photo-1674471361346-38d423db19f3?auto=format&fit=crop&w=800&q=80',
-  'plotter-cutters':        'https://images.unsplash.com/photo-1693031630146-568e2f72db0e?auto=format&fit=crop&w=800&q=80',
-  'manual-machines':        'https://images.unsplash.com/photo-1564848534648-558dc1ef55c7?auto=format&fit=crop&w=800&q=80',
-  'embroidery-machines':    'https://images.unsplash.com/photo-1526290766257-c015850e4629?auto=format&fit=crop&w=800&q=80',
+  'industrial-straight':    'https://images.pexels.com/photos/17710109/pexels-photo-17710109.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'industrial-overlocking': 'https://images.pexels.com/photos/9850425/pexels-photo-9850425.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'weaving-machines':       'https://images.unsplash.com/photo-1758272024360-a95be2abe403?auto=format&fit=crop&w=800&q=80',
+  'tapping-hemming':        'https://images.pexels.com/photos/27893063/pexels-photo-27893063.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'heat-transfer':          'https://images.pexels.com/photos/33650428/pexels-photo-33650428.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'plotter-cutters':        'https://images.pexels.com/photos/4679092/pexels-photo-4679092.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'manual-machines':        'https://images.unsplash.com/photo-1643570155378-7ca46b1aa1f5?auto=format&fit=crop&w=800&q=80',
+  'embroidery-machines':    'https://images.unsplash.com/photo-1772351720165-d9218e428cf0?auto=format&fit=crop&w=800&q=80',
   'steaming-pressing':      'https://images.unsplash.com/photo-1489274495757-95c7c837b101?auto=format&fit=crop&w=800&q=80',
-  'display-accessories':    'https://images.unsplash.com/photo-1567631643547-67a2dd59f266?auto=format&fit=crop&w=800&q=80',
-  'button-buttonhole':      'https://images.unsplash.com/photo-1598023707260-bb5987bf06e9?auto=format&fit=crop&w=800&q=80',
-  'cutting-machines':       'https://images.unsplash.com/photo-1777107508963-369c32e890c2?auto=format&fit=crop&w=800&q=80',
+  'display-accessories':    'https://images.unsplash.com/photo-1554109394-7e351053be0d?auto=format&fit=crop&w=800&q=80',
+  'button-buttonhole':      'https://images.unsplash.com/photo-1563891510473-18923cd29239?auto=format&fit=crop&w=800&q=80',
+  'cutting-machines':       'https://images.pexels.com/photos/4621896/pexels-photo-4621896.jpeg?auto=compress&cs=tinysrgb&w=800',
   'accessories-tools':      'https://images.unsplash.com/photo-1578353022142-09264fd64295?auto=format&fit=crop&w=800&q=80',
 };
 

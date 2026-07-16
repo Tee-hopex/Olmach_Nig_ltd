@@ -2,7 +2,7 @@ import { useSiteSettings } from '../../hooks/usePublicData';
 
 export default function WhatsAppButton() {
   const { data: settings } = useSiteSettings();
-  const number = settings?.whatsappNumber ?? '2348012345678';
+  const number = settings?.whatsappNumber && settings.whatsappNumber !== '2348012345678' ? settings.whatsappNumber : '2349021627280';
   const msg = encodeURIComponent('Hello! I\'d like to enquire about sewing machines and tailoring equipment.');
 
   return (

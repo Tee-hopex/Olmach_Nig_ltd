@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { MapPin, Phone, Camera, Clock, MessageCircle, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Clock, MessageCircle, CheckCircle } from 'lucide-react';
+import { InstagramIcon } from '../components/ui/SocialIcons';
 import toast from 'react-hot-toast';
 import { useSiteSettings } from '../hooks/usePublicData';
 
@@ -55,7 +56,7 @@ export default function ContactPage() {
                 href: `https://wa.me/${WHATSAPP_NUMBER}`,
               },
               {
-                icon: Camera,
+                icon: InstagramIcon,
                 title: 'Instagram',
                 lines: ['@Olmach_nig_ltd', 'Follow us for updates and product enquiries'],
                 color: 'text-green-500',

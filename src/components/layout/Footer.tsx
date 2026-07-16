@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Globe, Camera, PlayCircle } from 'lucide-react';
+import { MapPin, Phone } from 'lucide-react';
+import { FacebookIcon, InstagramIcon, TikTokIcon } from '../ui/SocialIcons';
 import logoFull from '../../assets/logo-full.png';
 
 const quickLinks = [
@@ -136,9 +137,9 @@ export default function Footer() {
           </h4>
           <div className="flex gap-3">
             {[
-              { Icon: Globe, label: 'Facebook', href: 'https://www.facebook.com/share/1F7LJGUL7w/?mibextid=wwXIfr' },
-              { Icon: Camera, label: 'Instagram', href: 'https://www.instagram.com/olmach_nig_ltd?igsh=MXE4dXplNmgzcGZsOA==&utm_source=ig_contact_invite' },
-              { Icon: PlayCircle, label: 'TikTok', href: 'https://www.tiktok.com/@olmach_nig_ltd1?_r=1' },
+              { Icon: FacebookIcon, label: 'Facebook', href: 'https://www.facebook.com/share/1F7LJGUL7w/?mibextid=wwXIfr' },
+              { Icon: InstagramIcon, label: 'Instagram', href: 'https://www.instagram.com/olmach_nig_ltd?igsh=MXE4dXplNmgzcGZsOA==&utm_source=ig_contact_invite' },
+              { Icon: TikTokIcon, label: 'TikTok', href: 'https://www.tiktok.com/@olmach_nig_ltd1?_r=1' },
             ].map(({ Icon, label, href }) => (
               <a
                 key={label}

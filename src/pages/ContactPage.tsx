@@ -6,7 +6,9 @@ import { useSiteSettings } from '../hooks/usePublicData';
 
 export default function ContactPage() {
   const { data: settings } = useSiteSettings();
-  const WHATSAPP_NUMBER = settings?.whatsappNumber ?? '2348012345678';
+  const WHATSAPP_NUMBER = settings?.whatsappNumber && settings.whatsappNumber !== '2348012345678' 
+    ? settings.whatsappNumber 
+    : '2349021627280';
 
   const [form, setForm] = useState({
     name: '', email: '', phone: '', subject: '', message: '',

@@ -67,8 +67,8 @@ export default function Footer() {
               </a>
             </div>
             <div className="flex items-center gap-2">
-              <Camera className="w-4 h-4 text-gold-400 flex-shrink-0" />
-              <a href="https://www.instagram.com/Olmach_nig_ltd" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">
+              <InstagramIcon className="w-4 h-4 text-gold-400 flex-shrink-0" />
+              <a href="https://www.instagram.com/olmach_nig_ltd?igsh=MXE4dXplNmgzcGZsOA==&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">
                 @Olmach_nig_ltd
               </a>
             </div>

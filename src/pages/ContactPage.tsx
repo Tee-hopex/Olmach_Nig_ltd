@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { MapPin, Phone, Clock, MessageCircle, CheckCircle } from 'lucide-react';
-import { InstagramIcon } from '../components/ui/SocialIcons';
+import { FacebookIcon, InstagramIcon, TikTokIcon } from '../components/ui/SocialIcons';
 import toast from 'react-hot-toast';
 import { useSiteSettings } from '../hooks/usePublicData';
 
@@ -64,36 +64,68 @@ export default function ContactPage() {
                 href: 'https://www.instagram.com/olmach_nig_ltd?igsh=MXE4dXplNmgzcGZsOA==&utm_source=ig_contact_invite',
               },
               {
+                icon: FacebookIcon,
+                title: 'Facebook',
+                lines: ['Olmach Nig Ltd', 'Connect with us on Facebook'],
+                color: 'text-blue-600',
+                bg: 'bg-blue-600/10',
+                href: 'https://www.facebook.com/share/1F7LJGUL7w/?mibextid=wwXIfr',
+              },
+              {
+                icon: TikTokIcon,
+                title: 'TikTok',
+                lines: ['@olmach_nig_ltd1', 'Watch our machine demos and tutorials'],
+                color: 'text-gray-900',
+                bg: 'bg-gray-900/10',
+                href: 'https://www.tiktok.com/@olmach_nig_ltd1?_r=1',
+              },
+              {
                 icon: Clock,
                 title: 'Business Hours',
                 lines: ['Monday – Saturday: 8am – 6pm', 'Sunday: 10am – 4pm'],
                 color: 'text-purple-500',
                 bg: 'bg-purple-500/10',
               },
-            ].map(item => (
-              <div
-                key={item.title}
-                className="bg-white rounded-2xl p-5 shadow-card flex gap-4"
-              >
-                <div className={`${item.bg} w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0`}>
-                  <item.icon className={`w-6 h-6 ${item.color}`} />
+            ].map(item => {
+              const CardContent = (
+                <>
+                  <div className={`${item.bg} w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110`}>
+                    <item.icon className={`w-6 h-6 ${item.color}`} />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-navy-900 mb-1 group-hover:text-gold-600 transition-colors">{item.title}</p>
+                    {item.lines.map((line, i) => (
+                      <p key={i} className="text-sm text-gray-500">
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                </>
+              );
+
+              if (item.href) {
+                return (
+                  <a
+                    key={item.title}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white rounded-2xl p-5 shadow-card flex gap-4 group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                  >
+                    {CardContent}
+                  </a>
+                );
+              }
+
+              return (
+                <div
+                  key={item.title}
+                  className="bg-white rounded-2xl p-5 shadow-card flex gap-4"
+                >
+                  {CardContent}
                 </div>
-                <div>
-                  <p className="font-semibold text-navy-900 mb-1">{item.title}</p>
-                  {item.lines.map((line, i) => (
-                    <p key={i} className="text-sm text-gray-500">
-                      {item.href && i === 0 ? (
-                        <a href={item.href} className="hover:text-gold-600 transition-colors">
-                          {line}
-                        </a>
-                      ) : (
-                        line
-                      )}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            ))}
+              );
+            })}
 
             {/* WhatsApp CTA */}
             <a

@@ -136,13 +136,15 @@ export default function Footer() {
           </h4>
           <div className="flex gap-3">
             {[
-              { Icon: Globe, label: 'Facebook' },
-              { Icon: Camera, label: 'Instagram' },
-              { Icon: PlayCircle, label: 'YouTube' },
-            ].map(({ Icon, label }) => (
+              { Icon: Globe, label: 'Facebook', href: 'https://www.facebook.com/share/1F7LJGUL7w/?mibextid=wwXIfr' },
+              { Icon: Camera, label: 'Instagram', href: 'https://www.instagram.com/olmach_nig_ltd?igsh=MXE4dXplNmgzcGZsOA==&utm_source=ig_contact_invite' },
+              { Icon: PlayCircle, label: 'TikTok', href: 'https://www.tiktok.com/@olmach_nig_ltd1?_r=1' },
+            ].map(({ Icon, label, href }) => (
               <a
                 key={label}
-                href="#"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={label}
                 className="w-9 h-9 bg-navy-800 rounded-lg flex items-center justify-center text-white/70 hover:bg-gold-500 hover:text-navy-900 transition-colors"
               >

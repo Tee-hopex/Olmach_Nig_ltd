@@ -60,7 +60,7 @@ export default function ContactPage() {
                 lines: ['@Olmach_nig_ltd', 'Follow us for updates and product enquiries'],
                 color: 'text-green-500',
                 bg: 'bg-green-500/10',
-                href: 'https://www.instagram.com/Olmach_nig_ltd',
+                href: 'https://www.instagram.com/olmach_nig_ltd?igsh=MXE4dXplNmgzcGZsOA==&utm_source=ig_contact_invite',
               },
               {
                 icon: Clock,

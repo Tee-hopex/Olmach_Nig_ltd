@@ -31,7 +31,7 @@ async function main() {
         bankName: process.env.BANK_NAME ?? 'First Bank Nigeria',
         bankAccountName: process.env.BANK_ACCOUNT_NAME ?? 'Olmach Nig Ltd',
         bankAccountNumber: process.env.BANK_ACCOUNT_NUMBER ?? '0000000000',
-        whatsappNumber: process.env.WHATSAPP_NUMBER ?? '2348012345678',
+        whatsappNumber: process.env.WHATSAPP_NUMBER ?? '2349021627280',
         deliveryFee: parseFloat(process.env.DELIVERY_FEE ?? '1500'),
         freeDeliveryThreshold: parseFloat(process.env.FREE_DELIVERY_THRESHOLD ?? '50000'),
       },

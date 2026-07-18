@@ -3,7 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
 import { z } from 'zod';
-import { ShieldCheck, ArrowLeft, Landmark, CreditCard, Truck, Copy, Check } from 'lucide-react';
+import { ShieldCheck, ArrowLeft, Landmark,
+  //  CreditCard, 
+   Truck, Copy, Check } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { useCartStore } from '../store/cartStore';

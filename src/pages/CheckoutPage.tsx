@@ -221,7 +221,7 @@ export default function CheckoutPage() {
                   {(
                     [
                       { value: 'bank_transfer', label: 'Bank Transfer', desc: 'Transfer directly to our bank account', Icon: Landmark },
-                      { value: 'card', label: 'Debit / Credit Card', desc: 'Pay securely online via Paystack', Icon: CreditCard },
+                      // { value: 'card', label: 'Debit / Credit Card', desc: 'Pay securely online via Paystack', Icon: CreditCard },
                       { value: 'pay_on_delivery', label: 'Pay on Delivery', desc: 'Cash payment when order arrives (Lagos only)', Icon: Truck },
                     ] as { value: string; label: string; desc: string; Icon: LucideIcon }[]
                   ).map(pm => (

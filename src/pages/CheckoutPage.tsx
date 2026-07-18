@@ -103,7 +103,7 @@ export default function CheckoutPage() {
         settings: typeof settings;
       };
 
-      const waNum = (orderSettings ?? settings)?.whatsappNumber && (orderSettings ?? settings)?.whatsappNumber !== '2349021627280' ? (orderSettings ?? settings)?.whatsappNumber : '2349021627280';
+      const waNum = (orderSettings ?? settings)?.whatsappNumber && (orderSettings ?? settings)?.whatsappNumber !== '2349021627280' ? ((orderSettings ?? settings)?.whatsappNumber as string) : '2349021627280';
       const waUrl = buildOrderWhatsAppUrl(
         createdOrder.orderNumber,
         items.map(i => ({

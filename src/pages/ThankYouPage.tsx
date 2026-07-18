@@ -37,7 +37,7 @@ export default function ThankYouPage() {
   const total = state?.total;
   const paymentMethod = state?.paymentMethod;
   const settings = state?.settings;
-  const waNumber = settings?.whatsappNumber ?? '2348012345678';
+  const waNumber = settings?.whatsappNumber && settings.whatsappNumber !== '2349021627280' ? settings.whatsappNumber : '2349021627280';
   const waMsg = encodeURIComponent(`Hi! I just placed order #${orderNumber} and would like to confirm delivery details.`);
 
   const { data: recommended = [] } = useBestSellers();

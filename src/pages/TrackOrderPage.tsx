@@ -27,20 +27,20 @@ interface TrackedOrder {
 }
 
 const STATUS_CONFIG: Record<string, { label: string; color: string; bg: string; border: string; Icon: typeof Package; step: number }> = {
-  pending:    { label: 'Order Placed',  color: 'text-yellow-700', bg: 'bg-yellow-50',  border: 'border-yellow-200', Icon: Clock,        step: 1 },
-  confirmed:  { label: 'Confirmed',     color: 'text-blue-700',   bg: 'bg-blue-50',    border: 'border-blue-200',   Icon: CheckCircle2, step: 2 },
-  processing: { label: 'Processing',    color: 'text-purple-700', bg: 'bg-purple-50',  border: 'border-purple-200', Icon: Package,      step: 3 },
-  shipped:    { label: 'Shipped',       color: 'text-indigo-700', bg: 'bg-indigo-50',  border: 'border-indigo-200', Icon: Truck,        step: 4 },
-  delivered:  { label: 'Delivered',     color: 'text-green-700',  bg: 'bg-green-50',   border: 'border-green-200',  Icon: CheckCircle2, step: 5 },
-  cancelled:  { label: 'Cancelled',     color: 'text-red-700',    bg: 'bg-red-50',     border: 'border-red-200',    Icon: XCircle,      step: 0 },
+  pending: { label: 'Order Placed', color: 'text-yellow-700', bg: 'bg-yellow-50', border: 'border-yellow-200', Icon: Clock, step: 1 },
+  confirmed: { label: 'Confirmed', color: 'text-blue-700', bg: 'bg-blue-50', border: 'border-blue-200', Icon: CheckCircle2, step: 2 },
+  processing: { label: 'Processing', color: 'text-purple-700', bg: 'bg-purple-50', border: 'border-purple-200', Icon: Package, step: 3 },
+  shipped: { label: 'Shipped', color: 'text-indigo-700', bg: 'bg-indigo-50', border: 'border-indigo-200', Icon: Truck, step: 4 },
+  delivered: { label: 'Delivered', color: 'text-green-700', bg: 'bg-green-50', border: 'border-green-200', Icon: CheckCircle2, step: 5 },
+  cancelled: { label: 'Cancelled', color: 'text-red-700', bg: 'bg-red-50', border: 'border-red-200', Icon: XCircle, step: 0 },
 };
 
 const STEPS: { key: string; label: string; short: string; Icon: typeof Package }[] = [
-  { key: 'pending',    label: 'Order Placed',  short: 'Placed',     Icon: Clock },
-  { key: 'confirmed',  label: 'Confirmed',     short: 'Confirmed',  Icon: CheckCircle2 },
-  { key: 'processing', label: 'Processing',    short: 'Processing', Icon: Package },
-  { key: 'shipped',    label: 'Shipped',       short: 'Shipped',    Icon: Truck },
-  { key: 'delivered',  label: 'Delivered',     short: 'Delivered',  Icon: CheckCircle2 },
+  { key: 'pending', label: 'Order Placed', short: 'Placed', Icon: Clock },
+  { key: 'confirmed', label: 'Confirmed', short: 'Confirmed', Icon: CheckCircle2 },
+  { key: 'processing', label: 'Processing', short: 'Processing', Icon: Package },
+  { key: 'shipped', label: 'Shipped', short: 'Shipped', Icon: Truck },
+  { key: 'delivered', label: 'Delivered', short: 'Delivered', Icon: CheckCircle2 },
 ];
 
 export default function TrackOrderPage() {
@@ -49,7 +49,7 @@ export default function TrackOrderPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const { data: settings } = useSiteSettings();
-  const waNumber = settings?.whatsappNumber ?? '2348012345678';
+  const waNumber = settings?.whatsappNumber && settings.whatsappNumber !== '2349021627280' ? settings.whatsappNumber : '2349021627280';
 
   const handleTrack = async (e: React.FormEvent) => {
     e.preventDefault();

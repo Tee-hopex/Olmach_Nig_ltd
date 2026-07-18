@@ -95,7 +95,7 @@ export default function BlogPostPage() {
   const { data: post, isLoading, isError } = useBlogPost(slug ?? '');
   const { data: allPosts } = useBlogPosts({ limit: 10 });
   const { data: settings } = useSiteSettings();
-  const waNumber = settings?.whatsappNumber ?? '2348012345678';
+  const waNumber = settings?.whatsappNumber && settings.whatsappNumber !== '2349021627280' ? settings.whatsappNumber : '2349021627280';
 
   if (isLoading) return <Skeleton />;
 

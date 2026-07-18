@@ -147,7 +147,7 @@ export default function AdminSettingsPage() {
           </h3>
           <div>
             <label className="block text-xs font-medium text-gray-600 mb-1.5">WhatsApp Number</label>
-            <input {...register('whatsappNumber')} className="setting-input" placeholder="2348012345678 (with country code, no +)" />
+            <input {...register('whatsappNumber')} className="setting-input" placeholder="2349021627280 (with country code, no +)" />
             <p className="text-xs text-gray-400 mt-1">Used for the WhatsApp chat button. Include country code without +.</p>
           </div>
         </div>

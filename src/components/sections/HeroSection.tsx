@@ -4,7 +4,7 @@ import { useSiteSettings } from '../../hooks/usePublicData';
 
 export default function HeroSection() {
   const { data: settings } = useSiteSettings();
-  const waNumber = settings?.whatsappNumber ?? '2348012345678';
+  const waNumber = settings?.whatsappNumber && settings.whatsappNumber !== '2349021627280' ? settings.whatsappNumber : '2349021627280';
   const waMsg = encodeURIComponent('Hi! I need expert advice on choosing a sewing machine.');
 
   return (

@@ -58,7 +58,7 @@ export default function ProductDetailPage() {
   const wished = isInWishlist(product.id);
   const displayPrice = product.salePrice ?? product.price;
   const hasDiscount = Boolean(product.salePrice);
-  const waNumber = settings?.whatsappNumber ?? '2348012345678';
+  const waNumber = settings?.whatsappNumber && settings.whatsappNumber !== '2349021627280' ? settings.whatsappNumber : '2349021627280';
   const waMsg = encodeURIComponent(`Hi! I'm interested in the ${product.name}. Can you share more details?`);
 
   const cartQty = cartItems.find(i => i.product.id === product.id)?.quantity ?? 0;

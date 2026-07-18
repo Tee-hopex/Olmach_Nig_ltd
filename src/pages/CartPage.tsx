@@ -8,7 +8,7 @@ import { useSiteSettings } from '../hooks/usePublicData';
 export default function CartPage() {
   const { items, removeItem, updateQuantity, getTotalPrice, getTotalItems } = useCartStore();
   const { data: settings } = useSiteSettings();
-  const waNumber = settings?.whatsappNumber ?? '2348012345678';
+  const waNumber = settings?.whatsappNumber && settings.whatsappNumber !== '2349021627280' ? settings.whatsappNumber : '2349021627280';
 
   if (items.length === 0) {
     return (
